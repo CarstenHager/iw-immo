@@ -1,0 +1,12 @@
+<f:if condition="{expose.descriptions->f:count()}">
+    <h3>Objektbeschreibung</h3>
+    <hr>
+    <f:for each="{expose.descriptions}" as="description">
+        <div class="object_detail">
+            <h4>{description.title}</h4>
+            <f:format.raw><p>{description.text}</p></f:format.raw>
+        </div>
+    </f:for>
+
+    <div class="clearfix h_020"></div>
+</f:if>

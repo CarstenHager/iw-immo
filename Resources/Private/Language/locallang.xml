@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+    <meta type="array">
+        <type>module</type>
+        <description>locallang for iw_immo</description>
+    </meta>
+    <data type="array">
+        <languageKey index="default" type="array">
+
+            <label index="error.1238108068">Bitte längeren Text eingeben.</label>
+
+
+        </languageKey>
+    </data>
+</T3locallang>

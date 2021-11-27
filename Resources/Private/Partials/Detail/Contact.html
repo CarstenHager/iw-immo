@@ -1,0 +1,34 @@
+<f:if condition="{expose.offerContact->f:count()}">
+    <h3>Anbieter dieser Immobilie</h3>
+    <hr>
+    <f:if condition="{expose.offerContact.company}">
+        <b>{expose.offerContact.company}</b><br>
+    </f:if>
+
+    <b>{expose.offerContact.salutation} {expose.offerContact.name}</b><br>
+    {expose.offerContact.street}<br>
+    {expose.offerContact.zip} {expose.offerContact.city}<br>
+    <br>
+
+    <f:if condition="{expose.offerContact.email}">
+        E-Mail: <a href="mailto:{expose.offerContact.email}">{expose.offerContact.email}</a>
+        <br>
+    </f:if>
+
+    <f:if condition="{expose.offerContact.fax}">
+        Fax: {expose.offerContact.fax}
+        <br>
+    </f:if>
+
+    <f:if condition="{expose.offerContact.mobil}">
+        Mobil: {expose.offerContact.mobil}
+        <br>
+    </f:if>
+
+    <f:if condition="{expose.offerContact.phone}">
+        Telefon: {expose.offerContact.phone}
+        <br>
+    </f:if>
+
+    <div class="clearfix h_020"></div>
+</f:if>

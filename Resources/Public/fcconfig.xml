@@ -1,0 +1,42 @@
+<FinCalcCnf>
+    <!-- MAKLERPROVISION -->
+    <EstateManager>
+
+        <State Name="Baden-W&#252;rttemberg"                        Commission="3,57"   Comment="3,57"/>
+        <State Name="Bayern"                                    Commission="3,57"   Comment="3,57"/>
+        <State Name="Berlin"                                    Commission="7,14"   Comment="7,14"/>
+        <State Name="Brandenburg"                               Commission="7,14"   Comment="7,14"/>
+        <State Name="Bremen"                                    Commission="5,95"   Comment="5,95"/>
+        <State Name="Hamburg"                 Commission="6,25"   Comment="6,25"/>
+        <State Name="Hessen"                                    Commission="5,95"   Comment="5,95"/>
+        <State Name="Mecklenburg-Vorpommern"  Commission="5,95"   Comment="3,57 oder 5,95"/>
+        <State Name="Niedersachsen&lt;sup&gt; 2)&lt;/sup&gt;"           Commission="5,95"   Comment="3,57 bis 5,95"/>
+        <State Name="Nordrhein-Westfalen"                       Commission="3,57"   Comment="3,57"/>
+        <State Name="Nordrhein-Westfalen: Muenster"                    Commission="4,76"   Comment="4,76"/>
+        <State Name="Rheinland-Pfalz"                                  Commission="3,57"   Comment="3,57"/>
+        <State Name="Rheinland-Pfalz: Kreis Mainz-Bingen"              Commission="5,95"   Comment="5,95"/>
+        <State Name="Saarland"                                         Commission="3,57"   Comment="3,57"/>
+        <State Name="Sachsen"                                   Commission="3,57"   Comment="3,57"/>
+        <State Name="Sachsen-Anhalt"                            Commission="3,57"   Comment="3,57"/>
+        <State Name="Schleswig-Holstein"                        Commission="3,57"   Comment="3,57"/>
+        <State Name="Thueringen"                                Commission="3,57"   Comment="3,57"/>
+    </EstateManager>
+
+
+
+    <!--
+
+    GRUNDERWERBSTEUER
+
+    -->
+
+    <EstateManager1>
+        <State1 Name="Berlin, Brandenburg, Baden-Württemberg, Nordrhein-Westfalen, Th&#252;ringen, Schleswig-Holstein"                        Commission="5,0"       Comment="5,0"/>
+        <State1 Name="Hamburg, Sachsen-Anhalt, Niedersachsen, Bremen"                        Commission="4,5"       Comment="4,5"/>
+        <State1 Name="Saarland"                        Commission="4,0"       Comment="4,0"/>
+        <State1 Name="alle anderen Bundesländer"                                     Commission="3,5"       Comment="3,5"/>
+    </EstateManager1>
+
+
+</FinCalcCnf>
+

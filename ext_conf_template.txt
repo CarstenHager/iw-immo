@@ -1,0 +1,22 @@
+# cat=basic; type=string; label= Immowelt API-Key
+apiKey =
+
+# cat=basic; type=string; label= Listenbild wenn nicht gesetzt
+defaultListImage = typo3conf/ext/iw_immo/Resources/Public/Images/DefaultListImage.jpg
+
+
+# cat=jquery; type=options[nicht einbinden=0,1.11.0,1.10.2,1.9.1,1.9.0,1.8.3,1.8.2,1.8.1,1.8.0,1.7.2,1.7.1,1.7,1.6.4,1.6.3,1.6.2,1.6.1,1.6]; label=jQuery einbinden:Minimales JQuery vom Google CDN einbinden
+includeJQuery=1.11.0
+
+# cat=jquery; type=options[nicht einbinden=0,1.10.4,1.10.1,1.10.0,1.9.2,1.9.1,1.9.0,1.8.24,1.8.23,1.8.22,1.8.21,1.8.20]; label=jQuery UI einbinden:JQuery UI vom Googlr CDN einbinden
+includeJQueryUI=1.10.4
+
+# cat=jquery; type=boolean; label=Localistaion für jQery UI einbinden
+includeJQueryUILocalization = 1
+
+# cat=jquery; type=boolean; label=Stylesheet für jQuery UI einbinden
+includeJQueryUIStyles = 1
+
+# cat=jquery; type=options[nicht einbinden=0,1.11.1,1.11.0,1.9,1.8.1]; label=jQuery Validation einbinden:JQuery Validation lokal einbinden
+includeJQueryValidation=1.11.1
+

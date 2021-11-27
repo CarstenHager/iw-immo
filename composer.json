@@ -1,0 +1,34 @@
+{
+    "name": "iwag/iw-immo",
+    "description": "Immowelt Extension",
+    "type": "typo3-cms-extension",
+    "license": [
+      "GPL-2.0-or-later"
+    ],
+    "authors": [
+        {
+            "name": "Daniel Siepmann",
+            "email": "coding@daniel-siepmann.de",
+            "homepage": "https://daniel-siepmann.de",
+            "role": "TYPO3 CMS 9.5 upgrade"
+        },
+        {
+            "name": "Immowelt AG",
+            "email": "support@immowelt.de",
+            "role": "Initial Developer"
+        }
+    ],
+    "require": {
+        "typo3/cms-core": "^9.5.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "IWAG\\IwImmo\\": "Classes/"
+        }
+    },
+    "extra": {
+        "typo3/cms": {
+            "extension-key": "iw_immo"
+        }
+    }
+}

@@ -1,0 +1,527 @@
+<div class="iwimmo">
+<h1>Finanzierungsrechner </h1>
+    <f:if condition="{settings.detail.pid}">
+        <div class="clearfix"></div>
+        <f:if condition="{calculator.calculatorPrice}">
+            <a href="javascript: window.history.back();">>>  zum Exposé</a>
+        </f:if>
+        <div class="clearfix"></div>
+    </f:if>
+    <div id="pnlInput" style="display: block;">
+        <div id="Page1">
+            <div id="Page5">
+                <div class="h_020"></div>
+                <h3>Eckdaten zur Finanzierung:</h3>
+                <div class="h_020"></div>
+                <span class="right">
+                    <select class="right state" id="ddlstate" name="" style="">
+                        <option value="0">Bitte auswählen</option>
+                        <option value="1">Baden-Württemberg</option>
+                        <option value="2">Bayern</option>
+                        <option value="3">Berlin</option>
+                        <option value="4">Brandenburg</option>
+                        <option value="5">Bremen</option>
+                        <option value="6">Hamburg</option>
+                        <option value="7">Hessen</option>
+                        <option value="8">Mecklenburg-Vorpommern</option>
+                        <option value="9">Niedersachsen</option>
+                        <option value="10">Nordrhein-Westfalen</option>
+                        <option value="11">Nordrhein-Westfalen: Münster</option>
+                        <option value="12">Rheinland-Pfalz</option>
+                        <option value="13">Rheinland-Pfalz: Kreis Mainz-Bingen</option>
+                        <option value="14">Saarland</option>
+                        <option value="15">Sachsen</option>
+                        <option value="16">Sachsen-Anhalt</option>
+                        <option value="17">Schleswig-Holstein</option>
+                        <option value="18">Thüringen</option>
+                    </select>
+                    <br/>
+                    <span style="color: Red; display: none;" class="right" id="lbError">Bitte wählen Sie ein Bundesland aus.</span>
+                </span>
+                <span class="">Standort der Immobilie:*</span>
+                <div class="h_020"></div>
+                <div class="right label_fc">&nbsp;€</div>
+                <span class="right">
+                    <input type="text" onkeyup="loseFocusTxtBox(this)" onblur="loseFocusTxtBox(this)" class="text-align-right right" size="20" value="{calculator.calculatorPrice}" maxlength="8" id="fullPrice" name="">
+                    <div class="clear"></div>
+                    <span style="color: Red; display: none;" class="right" id="lbErrorPrice">Bitte geben Sie einen Kaufpreis an.</span>
+                </span>
+                <span class="">Kaufpreis:*</span>
+                <div class="h_020"></div>
+                <div class="right label_fc">&nbsp;€</div>
+                <span class="right">
+                    <input type="text" onkeyup="loseFocusTxtBox(this)" onblur="loseFocusTxtBox(this)" class="text-align-right right w_150" size="20" value="0" maxlength="8" name="buildPrice" id="buildPrice">
+                </span>
+                + Bau-/Renovierungskosten:
+                <div class="h_020"></div>
+                <div id="pnlNebenkosten">
+                    <div class="right label_fc">&nbsp;€</div>
+                    <span class="right">
+                        <input type="text" readonly="" class="text-align-right transparent right" size="20" value="0"id="lbNebenkosten">
+                    </span>
+                </div>
+                <a href="#" title="aufklappen" id="lbAdditionalCosts">Nebenkosten (abhängig vom Standort)</a><br>
+                <div class="h_010"></div>
+                <div id="pnlAdditionalCosts" style="display: none;">
+                    <div class="right label_fc">&nbsp;€</div>
+                         <span class="right">
+                            <input type="text" readonly="" class="text-align-right transparent right" size="20" tabindex="-1" value="0" name="calcManager" id="calcManager">
+                        </span>
+                    <span class="">+ Maklerprovision:</span>
+                        <span class="fc_middle_margin">
+                            <div class="label_fc right">&nbsp;%</div>
+                            <span class="">
+                                <input type="text" style="width:auto;" onkeyup="loseFocusTxtBox2(this)" onblur="loseFocusTxtBox2(this)" class="text-align-right right" size="3" value="0" maxlength="4" id="managerProc">
+                            </span>
+                        </span>
+                    <div class="h_020"></div>
+                    <div class="right label_fc">&nbsp;€</div>
+                        <span class="right">
+                            <input type="text" readonly="" class="text-align-right transparent right" size="20" tabindex="-1" value="0" id="calcLaw" name="calcLaw">
+                        </span>
+                    <span>+ Notar- u. Gerichtskosten: </span>
+                        <span class="fc_middle_margin">
+                            <div class="label_fc right">&nbsp;%</div>
+                            <span class="">
+                                <input type="text"  style="width:auto;"  onkeyup="loseFocusTxtBox2(this)" onblur="loseFocusTxtBox2(this)" class="text-align-right right" size="3" value="1,5" maxlength="4" id="lawProc" name="lawProc">
+                            </span>
+                        </span>
+                    <div class="h_020"></div>
+                    <div class="right label_fc">&nbsp;€</div>
+                        <span class="right">
+                            <input type="text" readonly="" class="text-align-right transparent right" tabindex="-1" size="20"
+                                   value="0" name="calcTax" id="calcTax">
+                        </span>
+                    <span>+ Grunderwerbsteuer: </span>
+                    <span class="fc_middle_margin">
+                        <div class="right label_fc">&nbsp;%</div>
+                        <span>
+                            <input type="text" style="width:auto;"  readonly="" onkeyup="loseFocusTxtBox2(this)" onblur="loseFocusTxtBox2(this)" class="text-align-right right transparent" size="3" value="0" maxlength="4" id="taxProc" name="taxProc">
+                        </span>
+                    </span>
+                    <div class="h_020"></div>
+                    <div class="left">
+                        <label style="display: none" class="alert" id="lblErrorGrundsteuer">
+                            Bitte tragen Sie bei der Grunderwerbsteuer den für Ihr Bundesland gültigen Prozentsatz ein.
+                        </label>
+                    </div>
+                    <div class="h_020"></div>
+                </div>
+                <hr/>
+                <div class="right label_fc">&nbsp;€</div>
+                <span class="right">
+                    <input type="text" readonly="readonly" class=" transparent text-align-right right" size="20" tabindex="-1" name="resultPrice" value="0" id="resultPrice">
+                </span>
+                <strong>= Gesamtbetrag:</strong>
+                <div class="h_020"></div>
+                <div class="right label_fc">&nbsp;€</div>
+                <span class="right">
+                    <input type="text" onkeyup="loseFocusTxtBox(this)" onblur="loseFocusTxtBox(this)" class="text-align-right right" size="20" name="elsePlus" maxlength="10" value="0" id="elsePlus">
+                </span>
+                <span class="">- Eigenkapital:</span>
+                <div class="h_020"></div>
+                <div class="right label_fc">&nbsp;€</div>
+                <span class="right">
+                    <input type="text" readonly="readonly" class="text-align-right transparent right" size="20" name="toLend" value="0" tabindex="-1" id="toLend">
+                </span>
+                <strong class="">= Darlehensbetrag:</strong>
+            </div>
+            <div class="h_020"></div>
+            <h3>Angaben zur Tilgung:</h3>
+            <div class="h_020"></div>
+            <div class="right label_fc">&nbsp;&nbsp;&nbsp;&nbsp;</div>
+            <span class="right">
+                <select class="right" id="ddlZinsbindung" name="">
+                    <option value="5"> 5 Jahre</option>
+                    <option value="10" selected="selected">10 Jahre</option>
+                    <option value="15">15 Jahre</option>
+                    <option value="20">20 Jahre</option>
+                </select>
+            </span>
+            Zinsbindung in Jahren:
+            <div class="h_020"></div>
+            <div class="right label_fc">&nbsp;%</div>
+            <span class="right">
+                <input type="text" onkeyup="loseFocusTxtBox2(this)" onblur="loseFocusTxtBox2(this)" class="text-align-right right" size="20" name="zinssatz" value="" maxlength="4" id="zinssatz">
+                <br>
+                <span style="color: Red; display: none;" class="right" id="lbErrorZins">Bitte geben Sie einen Sollzinssatz an.</span>
+            </span>
+            <span class="">Sollzinssatz:*</span>
+            <div class="h_020"></div>
+            <div class="right label_fc" id="tilgungsSymbol">&nbsp;%</div>
+            <span class="right">
+                <input type="text" onkeyup="loseFocusTxtBox2(this)" onblur="loseFocusTxtBox2(this)" class="right text-align-right" size="20" name="tilgung" value="1,0" maxlength="6" id="tilgung">
+            </span>
+            <span style="">Tilgung:</span>
+            <span class="fc_middle_margin">
+                <input type="radio" checked="checked" id="Tilgungssatz" name="tilgungArt" value="Tilgungssatz" style="margin-left:18px;"><label for="Tilgungssatz">Tilgungssatz</label>
+                <input type="radio" id="Monatsrate" name="tilgungArt" value="Monatsrate"><label for="Monatsrate">Monatsrate</label>
+            </span>
+            <div class="h_020"></div>
+            <div id="pnlAngaben">
+                <div class="right label_fc">&nbsp;€</div>
+                <span class="right">
+                    <input type="text" readonly="" class="text-align-right transparent right" size="20" value="0" id="lbAngaben">
+                </span>
+            </div>
+            <a href="#" class="icon_collapse closed underline" title="aufklappen" id="lbRepayment">Angaben zur Sondertilgung (optional)</a><br>
+            <div class="h_020"></div>
+            <div id="pnlRepayment" style="display: none;">
+                <span class="">Art der Sondertilgung:</span>
+                <f:image src="EXT:iw_immo/Resources/Public/Images/info.gif" id="imgIconInfo" alt="Information Sondertiltung" title="Bitte tragen Sie hier Ihre Sondertilgungen ein. Bitte beachten Sie, dass Finanzierungsgeber Sondertilgungen – sofern als Option vereinbart – in der Regel erst nach einem Jahr Darlehenslaufzeit zulassen."/>
+                <span class="fc_margin_right right">
+                    <input type="radio" checked="checked" id="jaehrlich" name="SondertilgungArt1" value="jaehrlich"><label for="jaehrlich">jährlich</label>
+                    <input type="radio" id="einmalig" name="SondertilgungArt1" value="einmalig"><label for="einmalig">einmalig</label>
+                </span>
+                <div class="h_020"></div>
+                <div id="pnlTilgungYear">
+                    <div class="right label_fc">&nbsp;€</div>
+                        <span class="right">
+                            <input type="text" onkeyup="loseFocusTxtBox(this)" onblur="loseFocusTxtBox(this)"
+                                   class="text-align-right right" size="20" name="zinssatz" maxlength="6" id="TilgungYear1">
+                        </span>
+                    <span class="" style="line-height:25px;">Jährlich am:</span>
+                        <span class="fc_middle_margin">
+                                1.
+                                <select class="" id="ddlMonth" name="ddlMonth">
+                                    <option value="1">01</option>
+                                    <option value="2">02</option>
+                                    <option value="3">03</option>
+                                    <option value="4">04</option>
+                                    <option value="5">05</option>
+                                    <option value="6">06</option>
+                                    <option value="7">07</option>
+                                    <option value="8">08</option>
+                                    <option value="9">09</option>
+                                    <option value="10">10</option>
+                                    <option value="11">11</option>
+                                    <option value="12">12</option>
+                                </select>
+                        </span>
+                </div>
+                <div class="clearfix"></div>
+                <div id="pnlTilgungUnique" style="display: none;">
+                    <div class="right label_fc">&nbsp;€</div>
+                        <span class="right">
+                            <input type="text" onkeyup="loseFocusTxtBox(this)" onblur="loseFocusTxtBox(this)" class="text-align-right right TilgungWert" size="20" name="zinssatz" maxlength="6">
+                        </span>
+                        Einmalig am:
+                        <span class="fc_middle_margin">
+                            <span>1.</span>
+                            <span id="sonderTilgung" class="">
+                                <select style="margin-left:4px;" class="month" id="ddlMonth2" name="ddlMonth2"></select>
+                                <select style="margin-left:4px;" class="year" id="ddlYear" name="ddlYear">
+                                </select>
+                            </span>
+                        </span>
+                    <div id="moreFields"></div>
+                    <div class="clearfix"></div>
+                    <div class="h_020"></div>
+                    <a href="javascript:void(0);" id="btAdd">+ weitere Eingabezeile hinzufügen</a>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="h_020"></div>
+            <div class="button_01 button_01_border right">
+                <div id="lbCalc">Berechnen</div>
+            </div>
+            <small class="comment left">Bitte füllen Sie alle mit * gekennzeichneten Felder aus.</small>
+        </div>
+        <div class="h_020"></div>
+    </div>
+
+
+    <div class="icon_back left hpBack" style="display: none;">
+        <a href="#" class="">>>  zur Eingabe</a>
+    </div>
+
+    <div id="pnlResult" style="display: none;">
+        <div class="right" style="margin-top:-50px;">
+            <div class="button_01  button_01_border">
+                <a id="hpPrint">
+                    zur Druckansicht
+                </a>
+            </div>
+        </div>
+
+        <div class="h_020"></div>
+        <h3>Ergebnis Ihrer Immobilienfinanzierung</h3>
+        <div class="h_020"></div>
+        <span class="right">
+            <div class="right label_fc">
+                &nbsp;€
+            </div>
+            <input type="text" readonly="" class="transparent right text-align-right" size="20" name="Darlehenssumme2" value="0" id="darlehensrate">
+        </span>
+        <span class="">Monatliche Darlehensrate (Annuität)</span>
+        <div class="clearfix"></div>
+        <span class="right">
+            <div class="right label_fc">
+                &nbsp;€
+            </div>
+            <input type="text" readonly="" class="transparent right text-align-right" size="20" name="Darlehenssumme2" value="0" id="restschuld">
+        </span>
+        <span class="">Restschuld am Ende der Zinsbindung</span>
+        <div class="clearfix"></div>
+        <span class="right">
+            <div class="right label_fc">
+                &nbsp;€
+            </div>
+            <input type="text" readonly="" class="transparent right text-align-right" size="20" name="Darlehenssumme2" value="0" id="zinszahlung">
+        </span>
+        <span class="">Summe der geleisteten Zinszahlung am Ende der Zinsbindung</span>
+        <div class="clearfix"></div>
+        <span class="right">
+            <div class="right label_fc">
+                &nbsp;€
+            </div>
+            <input type="text" readonly="" class="transparent right text-align-right" size="20" name="Darlehenssumme2" value="0" id="getilgterBetrag">
+        </span>
+        <span class="">Getilgter Betrag am Ende der Zinsbindung</span>
+        <div class="clearfix"></div>
+        <span class="right">
+            <div class="right label_fc">
+                &nbsp;€
+            </div>
+            <input type="text" readonly="" class="transparent right text-align-right" size="20" name="Darlehenssumme2" value="0" id="enthalteneTilgung">
+        </span>
+        <span class="">Darin enthaltene Sondertilgungen</span>
+        <div class="clearfix">
+        </div>
+        <span class="right">
+            <div class="right label_fc">
+            </div>
+            <input type="text" readonly="" class="transparent right text-align-right" size="20" name="Darlehenssumme2" id="gesamtlaufzeit">
+        </span>
+        <span class="">Gesamtlaufzeit des Darlehens</span>
+        <div class="clearfix"></div>
+        <div class="h_020"></div>
+        <small class="comment left">Hinweis: Die Gesamtlaufzeit des Darlehens wurde unter Berücksichtigung
+            eines gleichbleibenden Zins- und Tilgungssatzes über die gesamte
+            Laufzeit berechnet. Bitte beachten Sie, dass sich Zinsen und Tilgung
+            nach
+            Ablauf der Zinsbindung für die Restlaufzeit ändern können.
+        </small>
+        <div class="h_020"></div>
+    </div>
+<!-- ###################################### Tilgungsplan #######################################-->
+    <div id="pnlTilgungsplan" style="display: none;">
+        <h3>Tilgungsplan des kalkulierten Darlehens über <span class="right padding_right_20" id="tbResultPrice"></span></h3>
+        <div class="h_020"></div>
+        <div class=" left">
+            <table border="0" id="rblAnsicht">
+                <tbody>
+                <tr>
+                    <td><input type="radio" checked="checked" value="0" name="rblAnsicht" id="rblAnsicht_0">
+                        <label for="rblAnsicht_0">jährlich</label>
+                    </td>
+                    <td><input type="radio" value="1" name="rblAnsicht" id="rblAnsicht_1" style="margin-left:20px;">
+                        <label for="rblAnsicht_1">monatlich</label>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="line_04"></div>
+        <div class="h_010"></div>
+        <div class="wrapper">
+            <table width="100%" style="padding-right: 15px;">
+                <tbody>
+                <tr>
+                    <th width="13%">
+                        <b>Zeitraum</b>
+                    </th>
+                    <th width="16%">
+                        <b>Restschuld am Periodenanfang</b>
+                    </th>
+                    <th width="15%">
+                        <b>Rate (Annuität)</b>
+                    </th>
+                    <th width="12%">
+                        <b>Zinsen</b>
+                    </th>
+                    <th width="12%">
+                        <b>Tilgung</b>
+                    </th>
+                    <th width="15%">
+                        <b>Sondertilgung</b>
+                    </th>
+                    <th width="17%">
+                        <b>Restschuld am Periodenende</b>
+                    </th>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="h_010"></div>
+        <div style="height: 400px; overflow-x: hidden; overflow-y: scroll;" class="wrapper">
+            <table width="100%" id="Tilgungstabelle"></table>
+        </div>
+        <div class="h_010"></div>
+
+    </div>
+<div class="icon_back left hpBack" style="display:none;">
+    <a href="#" class="hpBack">>>  zur Eingabe</a>
+</div>
+<!-- ###################################### Druckansicht #######################################-->
+    <div id="pnlDruckansicht" style="display: none;">
+        <div id="finanzierungsrechner">
+            <div id="pnlHead">
+                <div class="right" style="margin-top:-50px;">
+                    <div id="hldrucken_container" class="button_01  button_01_border">
+                        <a id="hldrucken">
+                            Drucken
+                        </a>
+                    </div>
+                </div>
+                <div class="icon_back left no_print">
+                    <a href="javascript:void(0)" id="hpBackTilgung">>> zum Ergebnis</a>
+                </div>
+                <div class="h_020"></div>
+                <div class="w_max">
+                    <h3>Berechnung Ihrer Immobilienfinanzierung</h3>
+                </div>
+            </div>
+            <div id="pnlGrundlage">
+                <div class="h_020"></div>
+                <h3>Grundlagen der Berechnung:</h3>
+                <div class="h_020"></div>
+                <span class="right text-align-right" id="lbKaufpreis"></span>
+                <span class="">Kaufpreis</span>
+                <div class="h_020"></div>
+                <span class="right text-align-right" id="lbBauRenovierung"></span>
+                <span class="">Bau-/Renovierungskosten</span>
+                <div class="h_020"></div>
+                <span class="right text-align-right" id="lbMarklerProvision"></span>
+                <span class="">Maklerprovision<span id="lbMarklerProvisionProzent"></span></span>
+                <div class="h_020"></div>
+                <span class="right text-align-right" id="lbNotarGericht"></span>
+                <span class="">Notar- u. Gerichtskosten<span id="lbNotarGerichtProzent"></span></span>
+                <div class="h_020"></div>
+                <span class="right text-align-right" id="lbGrunderwerbssteuer"></span>
+                <span class="">Grunderwerbssteuer<span id="lbGrunderwerbssteuerProzent"></span></span>
+                <div class="h_020"></div>
+                <span class="right text-align-right" id="lbEigenkapital"></span>
+                <span class="">Eigenkapital</span>
+                <div class="h_020"></div>
+                <b><span class="right text-align-right" id="lbDarlehensbetrag"></span></b>
+                <span class=""><b>Darlehensbetrag</b></span>
+                <div class="h_020"></div>
+                <span class="right text-align-right" id="lbSollzinssatz">2,5 %</span>
+                <span class="">Sollzinssatz</span>
+                <div class="h_020"></div>
+                <span class="right text-align-right" id="lbZinsbindung">10 Jahre</span>
+                <span class="">Zinsbindung in Jahren</span>
+                <div class="h_020"></div>
+                <span class="right text-align-right" id="lbTilgungssatz"></span>
+                <span class=""><span id="lbDruckansichtTilgung">Tilgungssatz</span></span>
+                <div class="h_020"></div>
+                <div id="pnlSondertilgung" style="display: none;">
+                    <span class="right text-align-right" id="lbSondertilgungJahr"></span>
+                    <span class="">Jährliche Sondertilgung ab dem<span id="lbSondertilgungDate"></span></span>
+                    <div class="h_020"></div>
+                </div>
+                <div id="pnlSondertilgung2" style="display: none;">
+                    <span class="right text-align-right" id="lbSondertilgungEinmalig"></span>
+                    <span class="">1. Einmalige Sondertilgung zum <span id="lbSondertilgungDate2"></span></span>
+                    <div class="h_020"></div>
+                </div>
+                <div id="pnlSondertilgung3" style="display: none;">
+                    <span class="right text-align-right" id="lbSondertilgungEinmalig2"></span>
+                    <span class="">2. Einmalige Sondertilgung zum <span id="lbSondertilgungDate3"></span></span>
+                    <div class="h_020"></div>
+                </div>
+                <div id="pnlSondertilgung4" style="display: none;">
+                    <span class="right text-align-right" id="lbSondertilgungEinmalig3"></span>
+                    <span class="">3. Einmalige Sondertilgung zum <span id="lbSondertilgungDate4"></span></span>
+                    <div class="h_020"></div>
+                </div>
+                <div id="pnlSondertilgung5" style="display: none;">
+                    <span class="right text-align-right" id="lbSondertilgungEinmalig4"></span>
+                    <span class="">4. Einmalige Sondertilgung zum <span id="lbSondertilgungDate5"></span></span>
+                    <div class="h_020"></div>
+                </div>
+                <div id="pnlSondertilgung6" style="display: none;">
+                    <span class="right text-align-right" id="lbSondertilgungEinmalig5"></span>
+                    <span class="">5. Einmalige Sondertilgung zum <span id="lbSondertilgungDate6"></span></span>
+                    <div class="h_020"></div>
+                </div>
+            </div>
+            <div id="pnlErgebnis">
+                <div class="h_020"></div>
+                <div class="h_020"></div>
+                <h3>Ergebnis der Berechnung:</h3>
+                <div class="h_020"></div>
+                <span class="right text-align-right" id="lbMonatlicheRate"></span>
+                <span class="">Monatliche Darlehensrate (Annuität)</span>
+                <div class="h_020"></div>
+                <span class="right text-align-right" id="lbRestschuld"></span>
+                <span class="">Restschuld am Ende der Zinsbindung</span>
+                <div class="h_020"></div>
+                <span class="right text-align-right" id="lbZinszahlung"></span>
+                <span class="">Summe der geleisteten Zinszahlungen am Ende der Zinsbindung</span>
+                <div class="h_020"></div>
+                <span class="right text-align-right" id="lbGetilgterBetrag"></span>
+                <span class="">Getilgter Betrag am Ende der Zinsbindung</span>
+                <div class="h_020"></div>
+                <span class="right text-align-right" id="lbSummeSondertilgung"></span>
+                <span class="">Summe der enthaltenen Sondertilgungen</span>
+                <div class="h_020"></div>
+                <span class="right text-align-right" id="lbLaufzeit"></span>
+                <span class="">Gesamtlaufzeit des Darlehens</span>
+                <div class="h_020"></div>
+            </div>
+            <div id="pnlTabelle">
+                <div class="h_020"></div>
+                <div class="h_020"></div>
+                <h3>Tilgungsplan:</h3>
+                <div class="h_020"></div>
+                <div class="">
+                    <div class="line_04 no_margin"></div>
+                    <table width="100%">
+                        <tbody>
+                        <tr>
+                            <th width="14%">
+                                <b>Zeitraum</b>
+                            </th>
+                            <th width="16%" class="">
+                                <b>Restschuld am Periodenanfang</b>
+                            </th>
+                            <th width="15%" class="">
+                                <b>Rate (Annuität)</b>
+                            </th>
+                            <th width="12%" class="">
+                                <b>Zinsen</b>
+                            </th>
+                            <th width="12%" class="">
+                                <b>Tilgung</b>
+                            </th>
+                            <th width="15%" class="">
+                                <b>Sondertilgung</b>
+                            </th>
+                            <th width="16%" class="">
+                                <b>Restschuld am Periodenende</b>
+                            </th>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <div class="line_04 no_margin"></div>
+                    <table width="100%" id="TilgungstabellePopUp">
+                    </table>
+                    <div class="line_04 no_margin">
+                    </div>
+                    <div class="h_010">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- ###################################### Hidden Forms #######################################-->
+
+    <input type="hidden" value="2|2,5|2,8|3" id="hfZinssatz" name="">
+
+    <input type="hidden" value="" id="hffullPrice" name="">
+    <input type="hidden" value="" id="hfGeoID" name="">
+
+</div>

@@ -1,0 +1,529 @@
+<f:if condition="{expose.energyPerformanceList->f:count()}">
+    <h3>Energie & Bausubstanz</h3>
+    <hr>
+    <div class="grid enev">
+    <f:for each="{expose.energyPerformanceList}" as="energyPerformance" iteration="i">
+        <f:if condition="{energyPerformance.isVisible}">
+            <f:switch expression="{energyPerformance.NormId}">
+                <f:case value="1">
+                    <f:if condition="{energyPerformance.ArtId} == 1">
+                            <f:then>
+                            <div class="col-1-2">
+                            <f:if condition="{energyPerformance.Bezeichnung}">
+                                <div class="col-1-1"><strong>{energyPerformance.Bezeichnung}</strong></div>
+                            </f:if>
+                            <div class="clearfix"></div>
+                            <f:if condition="{energyPerformance.GebaeudeTyp}">
+                                <div class="col-1-2"><strong>Gebäudetyp</strong>:</div>
+                                <div class="col-1-2">{energyPerformance.GebaeudeTyp}</div>
+                            </f:if>
+                            <div class="clearfix"></div>
+                            <f:if condition="{energyPerformance.AusstellDatum}">
+                                <div class="col-1-2"><strong>Ausstelldatum</strong>:</div>
+                                <div class="col-1-2">{energyPerformance.AusstellDatum}</div>
+                            </f:if>
+                            <div class="clearfix"></div>
+                            <f:if condition="{energyPerformance.GueltigBisDatum}">
+                                <div class="col-1-2"><strong>gültig bis</strong>:</div>
+                                <div class="col-1-2">{energyPerformance.GueltigBisDatum}</div>
+                            </f:if>
+                            <div class="clearfix"></div>
+                            <f:if condition="{energyPerformance.PrimaerEnergieTraeger}">
+                                <div class="col-1-2"><strong>Wesentliche Energieträger</strong>:</div>
+                                <div class="col-1-2">{energyPerformance.PrimaerEnergieTraeger}</div>
+                            </f:if>
+                            <div class="clearfix"></div>
+                            <f:if condition="{energyPerformance.Baujahr}">
+                                <f:then>
+                                    <div class="col-1-2"><strong>Baujahr (lt. Energieausweis)</strong>:</div>
+                                    <div class="col-1-2">{energyPerformance.Baujahr}</div>
+                                </f:then>
+                                <f:else>
+                                    <f:if condition="{expose.createDate}">
+                                        <f:then>
+                                            <div class="col-1-2"><strong>Baujahr</strong>:</div>
+                                            <div class="col-1-2">{expose.createDate}</div>
+                                        </f:then>
+                                    </f:if>
+                                </f:else>
+                            </f:if>
+                            <div class="clearfix"></div>
+                            <f:if condition="{energyPerformance.Norm}">
+                                <div class="col-1-2"><strong>Energieausweis</strong>:</div>
+                                <div class="col-1-2">{energyPerformance.Norm}</div>
+                            </f:if>
+                            <div class="clearfix"></div>
+                            <f:if condition="{energyPerformance.Art}">
+                                <div class="col-1-2"><strong>Ausweisart</strong>:</div>
+                                <div class="col-1-2">{energyPerformance.Art}</div>
+                            </f:if>
+
+                            <div class="clearfix"></div>
+                            <hr/>
+                            <div class="clearfix"></div>
+
+                            <f:if condition="{energyPerformance.Wert1Typ} && {energyPerformance.Art}">
+                                <div class="col-1-2"><strong>{energyPerformance.Wert1Typ}</strong>:</div>
+                                <div class="col-1-2">{energyPerformance.Wert1->f:format.number(decimalSeparator:',',thousandsSeparator:'.')} kWh/(m²·a)</div>
+                            </f:if>
+                            <div class="clearfix"></div>
+                            </div>
+                        </f:then>
+                        <f:else>
+                                <div class="col-1-2">
+                                <f:if condition="{energyPerformance.Bezeichnung}">
+                                    <div class="col-1-1"><strong>{energyPerformance.Bezeichnung}</strong></div>
+                                </f:if>
+                                <div class="clearfix"></div>
+                                <f:if condition="{energyPerformance.GebaeudeTyp}">
+                                    <div class="col-1-2"><strong>Gebäudetyp</strong>:</div>
+                                    <div class="col-1-2">{energyPerformance.GebaeudeTyp}</div>
+                                </f:if>
+                                <div class="clearfix"></div>
+                                <f:if condition="{energyPerformance.AusstellDatum}">
+                                    <div class="col-1-2"><strong>Ausstelldatum</strong>:</div>
+                                    <div class="col-1-2">{energyPerformance.AusstellDatum}</div>
+                                </f:if>
+                                <div class="clearfix"></div>
+                                <f:if condition="{energyPerformance.GueltigBisDatum}">
+                                    <div class="col-1-2"><strong>gültig bis</strong>:</div>
+                                    <div class="col-1-2">{energyPerformance.GueltigBisDatum}</div>
+                                </f:if>
+                                <div class="clearfix"></div>
+                                <f:if condition="{energyPerformance.PrimaerEnergieTraeger}">
+                                    <div class="col-1-2"><strong>Wesentliche Energieträger</strong>:</div>
+                                    <div class="col-1-2">{energyPerformance.PrimaerEnergieTraeger}</div>
+                                </f:if>
+                                <div class="clearfix"></div>
+                                <f:if condition="{energyPerformance.Baujahr}">
+                                    <f:then>
+                                        <div class="col-1-2"><strong>Baujahr (lt. Energieausweis)</strong>:</div>
+                                        <div class="col-1-2">{energyPerformance.Baujahr}</div>
+                                    </f:then>
+                                    <f:else>
+                                        <f:if condition="{expose.createDate}">
+                                            <f:then>
+                                                <div class="col-1-2"><strong>Baujahr</strong>:</div>
+                                                <div class="col-1-2">{expose.createDate}</div>
+                                            </f:then>
+                                        </f:if>
+                                    </f:else>
+                                </f:if>
+                                <div class="clearfix"></div>
+                                <f:if condition="{energyPerformance.Norm}">
+                                    <div class="col-1-2"><strong>Energieausweis</strong>:</div>
+                                    <div class="col-1-2">{energyPerformance.Norm}</div>
+                                </f:if>
+                                <div class="clearfix"></div>
+                                <f:if condition="{energyPerformance.Art}">
+                                    <div class="col-1-2"><strong>Ausweisart</strong>:</div>
+                                    <div class="col-1-2">{energyPerformance.Art}</div>
+                                </f:if>
+
+                                <div class="clearfix"></div>
+                                <hr/>
+                                <div class="clearfix"></div>
+                                    <f:if condition="{energyPerformance.GebaeudeTypId} == 1">
+                                        <f:then>
+                                            <f:if condition="{energyPerformance.Wert1Typ} && {energyPerformance.Wert1}">
+                                                <div class="col-1-2"><strong>{energyPerformance.Wert1Typ}</strong>:</div>
+                                                <div class="col-1-2">{energyPerformance.Wert1->f:format.number(decimalSeparator:',',thousandsSeparator:'.')} kWh/(m²·a)</div>
+                                            </f:if>
+                                            <div class="clearfix"></div>
+                                            <f:if condition="{energyPerformance.Wert1InclWarmWasser}">
+                                                <div class="col-1-2"><strong>Energieverbrauch für Warmwasser enhalten</strong>:</div>
+                                                <div class="col-1-2">Ja</div>
+                                            </f:if>
+                                        </f:then>
+                                        <f:else>
+                                            <f:if condition="{energyPerformance.Wert1Typ} != ''">
+                                                <f:then>
+                                                    <f:if condition="{energyPerformance.Wert2Typ} != ''">
+                                                        <f:then>
+                                                            <f:if condition="{energyPerformance.Wert1Typ} && {energyPerformance.Wert1}">
+                                                                <div class="col-1-2"><strong>{energyPerformance.Wert1Typ}</strong>:</div>
+                                                                <div class="col-1-2">{energyPerformance.Wert1->f:format.number(decimalSeparator:',',thousandsSeparator:'.')} kWh/(m²·a)</div>
+                                                            </f:if>
+                                                            <div class="clearfix"></div>
+                                                            <f:if condition="{energyPerformance.Wert1InclWarmWasser}">
+                                                                <div class="col-1-2"><strong>Energieverbrauch für Warmwasser enhalten</strong>:</div>
+                                                                <div class="col-1-2">Ja</div>
+                                                            </f:if>
+                                                            <div class="clearfix"></div>
+                                                            <f:if condition="{energyPerformance.Wert2} && {energyPerformance.Wert2Typ}">
+                                                                <div class="col-1-2"><strong>{energyPerformance.Wert2Typ}</strong>:</div>
+                                                                <div class="col-1-2">{energyPerformance.Wert2->f:format.number(decimalSeparator:',',thousandsSeparator:'.')} kWh/(m²·a)</div>
+                                                            </f:if>
+                                                        </f:then>
+                                                        <f:else>
+                                                            <f:if condition="{energyPerformance.Wert1Typ} && {energyPerformance.Wert1}">
+                                                                <div class="col-1-2"><strong>{energyPerformance.Wert1Typ}</strong>:</div>
+                                                                <div class="col-1-2">{energyPerformance.Wert1->f:format.number(decimalSeparator:',',thousandsSeparator:'.')} kWh/(m²·a)</div>
+                                                            </f:if>
+                                                            <div class="clearfix"></div>
+                                                            <f:if condition="{energyPerformance.Wert1InclWarmWasser}">
+                                                                <div class="col-1-2"><strong>Energieverbrauch für Warmwasser enhalten</strong>:</div>
+                                                                <div class="col-1-2">Ja</div>
+                                                            </f:if>
+                                                        </f:else>
+                                                    </f:if>
+                                                </f:then>
+                                                <f:else>
+                                                    <f:if condition="{energyPerformance.Wert2Typ} != ''">
+                                                        <f:then>
+
+                                                            <f:if condition="{energyPerformance.Wert2} && {energyPerformance.Wert2Typ}">
+                                                                <div class="col-1-2"><strong>{energyPerformance.Wert2Typ}</strong>:</div>
+                                                                <div class="col-1-2">{energyPerformance.Wert2->f:format.number(decimalSeparator:',',thousandsSeparator:'.')} kWh/(m²·a)</div>
+                                                            </f:if>
+                                                        </f:then>
+                                                    </f:if>
+                                                </f:else>
+                                            </f:if>
+                                      </f:else>
+                                    </f:if>
+                                <div class="clearfix"></div>
+                                </div>
+
+                        </f:else>
+                    </f:if>
+                </f:case>
+                <f:case value="2">
+                    <f:if condition="{energyPerformance.GebaeudeTypId} == 1">
+                        <f:then>
+                            <f:if condition="{energyPerformance.ArtId} == 1">
+                                    <f:then>
+                                        <div class="col-1-2">
+                                        <f:if condition="{energyPerformance.Bezeichnung}">
+                                            <div class="col-1-1"><strong>{energyPerformance.Bezeichnung}</strong></div>
+                                        </f:if>
+                                        <div class="clearfix"></div>
+                                        <f:if condition="{energyPerformance.GebaeudeTyp}">
+                                            <div class="col-1-2"><strong>Gebäudetyp</strong>:</div>
+                                            <div class="col-1-2">{energyPerformance.GebaeudeTyp}</div>
+                                        </f:if>
+                                        <div class="clearfix"></div>
+                                        <f:if condition="{energyPerformance.AusstellDatum}">
+                                            <div class="col-1-2"><strong>Ausstelldatum</strong>:</div>
+                                            <div class="col-1-2">{energyPerformance.AusstellDatum}</div>
+                                        </f:if>
+                                        <div class="clearfix"></div>
+                                        <f:if condition="{energyPerformance.GueltigBisDatum}">
+                                            <div class="col-1-2"><strong>gültig bis</strong>:</div>
+                                            <div class="col-1-2">{energyPerformance.GueltigBisDatum}</div>
+                                        </f:if>
+                                        <div class="clearfix"></div>
+                                        <f:if condition="{energyPerformance.PrimaerEnergieTraeger}">
+                                            <div class="col-1-2"><strong>Wesentliche Energieträger</strong>:</div>
+                                            <div class="col-1-2">{energyPerformance.PrimaerEnergieTraeger}</div>
+                                        </f:if>
+                                        <div class="clearfix"></div>
+                                        <f:if condition="{energyPerformance.Baujahr}">
+                                            <f:then>
+                                                <div class="col-1-2"><strong>Baujahr (lt. Energieausweis)</strong>:</div>
+                                                <div class="col-1-2">{energyPerformance.Baujahr}</div>
+                                            </f:then>
+                                            <f:else>
+                                                <f:if condition="{expose.createDate}">
+                                                    <f:then>
+                                                        <div class="col-1-2"><strong>Baujahr</strong>:</div>
+                                                        <div class="col-1-2">{expose.createDate}</div>
+                                                    </f:then>
+                                                </f:if>
+                                            </f:else>
+                                        </f:if>
+                                        <div class="clearfix"></div>
+                                        <f:if condition="{energyPerformance.Norm}">
+                                            <div class="col-1-2"><strong>Energieausweis</strong>:</div>
+                                            <div class="col-1-2">{energyPerformance.Norm}</div>
+                                        </f:if>
+                                        <div class="clearfix"></div>
+                                        <f:if condition="{energyPerformance.Art}">
+                                            <div class="col-1-2"><strong>Ausweisart</strong>:</div>
+                                            <div class="col-1-2">{energyPerformance.Art}</div>
+                                        </f:if>
+
+                                        <div class="clearfix"></div>
+                                        <hr/>
+                                        <div class="clearfix"></div>
+
+                                        <f:if condition="{energyPerformance.Wert1}">
+                                            <div class="col-1-2"><strong>Endenergiebedarf</strong>:</div>
+                                            <div class="col-1-2">{energyPerformance.Wert1->f:format.number(decimalSeparator:',',thousandsSeparator:'.')} kWh/(m²·a)</div>
+                                            <div class="clearfix"></div>
+                                        </f:if>
+                                        <f:if condition="{energyPerformance.Wert1Klasse }">
+                                            <div class="col-1-2"><strong>Energieeffizienzklasse</strong>:</div>
+                                            <div class="col-1-2">{energyPerformance.Wert1Klasse}</div>
+                                            <div class="clearfix"></div>
+                                            <div class="col-1-2"><strong>Energieeffiziennzklasse</strong>:</div>
+                                            <div class="col-1-2">{energyPerformance.Wert1KlasseId}</div>
+                                        </f:if>
+                                        <div class="clearfix"></div>
+                                        </div>
+                                    </f:then>
+                                    <f:else>
+                                        <div class="col-1-2">
+                                        <f:if condition="{energyPerformance.Bezeichnung}">
+                                            <div class="col-1-1"><strong>{energyPerformance.Bezeichnung}</strong></div>
+                                        </f:if>
+                                        <div class="clearfix"></div>
+                                        <f:if condition="{energyPerformance.GebaeudeTyp}">
+                                            <div class="col-1-2"><strong>Gebäudetyp</strong>:</div>
+                                            <div class="col-1-2">{energyPerformance.GebaeudeTyp}</div>
+                                        </f:if>
+                                        <div class="clearfix"></div>
+                                        <f:if condition="{energyPerformance.AusstellDatum}">
+                                            <div class="col-1-2"><strong>Ausstelldatum</strong>:</div>
+                                            <div class="col-1-2">{energyPerformance.AusstellDatum}</div>
+                                        </f:if>
+                                        <div class="clearfix"></div>
+                                        <f:if condition="{energyPerformance.GueltigBisDatum}">
+                                            <div class="col-1-2"><strong>gültig bis</strong>:</div>
+                                            <div class="col-1-2">{energyPerformance.GueltigBisDatum}</div>
+                                        </f:if>
+                                        <div class="clearfix"></div>
+                                        <f:if condition="{energyPerformance.PrimaerEnergieTraeger}">
+                                            <div class="col-1-2"><strong>Wesentliche Energieträger</strong>:</div>
+                                            <div class="col-1-2">{energyPerformance.PrimaerEnergieTraeger}</div>
+                                        </f:if>
+                                        <div class="clearfix"></div>
+                                        <f:if condition="{energyPerformance.Baujahr}">
+                                            <f:then>
+                                                <div class="col-1-2"><strong>Baujahr (lt. Energieausweis)</strong>:</div>
+                                                <div class="col-1-2">{energyPerformance.Baujahr}</div>
+                                            </f:then>
+                                            <f:else>
+                                                <f:if condition="{expose.createDate}">
+                                                    <f:then>
+                                                        <div class="col-1-2"><strong>Baujahr</strong>:</div>
+                                                        <div class="col-1-2">{expose.createDate}</div>
+                                                    </f:then>
+                                                </f:if>
+                                            </f:else>
+                                        </f:if>
+                                        <div class="clearfix"></div>
+                                        <f:if condition="{energyPerformance.Norm}">
+                                            <div class="col-1-2"><strong>Energieausweis</strong>:</div>
+                                            <div class="col-1-2">{energyPerformance.Norm}</div>
+                                        </f:if>
+                                        <div class="clearfix"></div>
+                                        <f:if condition="{energyPerformance.Art}">
+                                            <div class="col-1-2"><strong>Ausweisart</strong>:</div>
+                                            <div class="col-1-2">{energyPerformance.Art}</div>
+                                        </f:if>
+                                        <div class="clearfix"></div>
+                                        <hr>
+                                        <div class="clearfix"></div>
+                                        <f:if condition="{energyPerformance.Wert1}">
+                                            <div class="col-1-2"><strong>Endenergieverbrauch</strong>:</div>
+                                            <div class="col-1-2">{energyPerformance.Wert1->f:format.number(decimalSeparator:',',thousandsSeparator:'.')} kWh/(m²·a)</div>
+                                            <div class="clearfix"></div>
+                                            <f:if condition="{energyPerformance.Wert1InclWarmWasser}">
+                                                <div class="col-1-2"><strong>Energieverbrauch für Warmwasser enhalten</strong>:</div>
+                                                <div class="col-1-2">Ja</div>
+                                            </f:if>
+                                            <div class="clearfix"></div>
+                                        </f:if>
+                                        <f:if condition="{energyPerformance.Wert1Klasse}">
+                                            <div class="col-1-2"><strong>Energieeffizienzklasse</strong>:</div>
+                                            <div class="col-1-2">{energyPerformance.Wert1Klasse}</div>
+                                        </f:if>
+                                            <div class="clearfix"></div>
+                                        </div>
+                                    </f:else>
+                                </f:if>
+                        </f:then>
+                        <f:else>
+                            <f:if condition="{energyPerformance.ArtId} == 1">
+                                <f:then>
+                                    <div class="col-1-2">
+                                    <f:if condition="{energyPerformance.Bezeichnung}">
+                                        <div class="col-1-1"><strong>{energyPerformance.Bezeichnung}</strong></div>
+                                    </f:if>
+                                    <div class="clearfix"></div>
+                                    <f:if condition="{energyPerformance.GebaeudeTyp}">
+                                        <div class="col-1-2"><strong>Gebäudetyp</strong>:</div>
+                                        <div class="col-1-2">{energyPerformance.GebaeudeTyp}</div>
+                                    </f:if>
+                                    <div class="clearfix"></div>
+                                    <f:if condition="{energyPerformance.AusstellDatum}">
+                                        <div class="col-1-2"><strong>Ausstelldatum</strong>:</div>
+                                        <div class="col-1-2">{energyPerformance.AusstellDatum}</div>
+                                    </f:if>
+                                    <div class="clearfix"></div>
+                                    <f:if condition="{energyPerformance.GueltigBisDatum}">
+                                        <div class="col-1-2"><strong>gültig bis</strong>:</div>
+                                        <div class="col-1-2">{energyPerformance.GueltigBisDatum}</div>
+                                    </f:if>
+                                    <div class="clearfix"></div>
+                                    <f:if condition="{energyPerformance.PrimaerEnergieTraeger}">
+                                        <div class="col-1-2"><strong>Wesentliche Energieträger</strong>:</div>
+                                        <div class="col-1-2">{energyPerformance.PrimaerEnergieTraeger}</div>
+                                    </f:if>
+                                    <div class="clearfix"></div>
+
+                                    <f:if condition="{energyPerformance.Baujahr}">
+                                        <f:then>
+                                            <div class="col-1-2"><strong>Baujahr (lt. Energieausweis)</strong>:</div>
+                                            <div class="col-1-2">{energyPerformance.Baujahr}</div>
+                                        </f:then>
+                                        <f:else>
+                                            <f:if condition="{expose.createDate}">
+                                                <f:then>
+                                                    <div class="col-1-2"><strong>Baujahr</strong>:</div>
+                                                    <div class="col-1-2">{expose.createDate}</div>
+                                                </f:then>
+                                            </f:if>
+                                        </f:else>
+                                    </f:if>
+                                    <div class="clearfix"></div>
+                                    <f:if condition="{energyPerformance.Norm}">
+                                        <div class="col-1-2"><strong>Energieausweis</strong>:</div>
+                                        <div class="col-1-2">{energyPerformance.Norm}</div>
+                                    </f:if>
+                                    <div class="clearfix"></div>
+
+                                    <f:if condition="{energyPerformance.Art}">
+                                        <div class="col-1-2"><strong>Ausweisart</strong>:</div>
+                                        <div class="col-1-2">{energyPerformance.Art}</div>
+                                    </f:if>
+
+                                    <div class="clearfix"></div>
+                                    <hr />
+                                    <div class="clearfix"></div>
+
+                                    <f:if condition="{energyPerformance.Wert1} && {energyPerformance.Wert1Typ}">
+                                        <div class="col-1-2"><strong>{energyPerformance.Wert1Typ}</strong>:</div>
+                                        <div class="col-1-2">{energyPerformance.Wert1->f:format.number(decimalSeparator:',',thousandsSeparator:'.')} kWh/(m²·a)</div>
+                                    </f:if>
+                                    <div class="clearfix"></div>
+                                    <f:if condition="{energyPerformance.Wert2} && {energyPerformance.Wert2Typ}">
+                                        <div class="col-1-2"><strong>{energyPerformance.Wert2Typ}</strong>:</div>
+                                        <div class="col-1-2">{energyPerformance.Wert2->f:format.number(decimalSeparator:',',thousandsSeparator:'.')} kWh/(m²·a)</div>
+                                    </f:if>
+                                    <div class="clearfix"></div>
+                                    </div>
+                                </f:then>
+                                <f:else>
+                                    <div class="col-1-2">
+                                    <f:if condition="{energyPerformance.Bezeichnung}">
+                                        <div class="col-1-1"><strong>{energyPerformance.Bezeichnung}</strong></div>
+                                    </f:if>
+                                    <div class="clearfix"></div>
+                                    <f:if condition="{energyPerformance.GebaeudeTyp}">
+                                        <div class="col-1-2"><strong>Gebäudetyp</strong>:</div>
+                                        <div class="col-1-2">{energyPerformance.GebaeudeTyp}</div>
+                                    </f:if>
+                                    <div class="clearfix"></div>
+                                    <f:if condition="{energyPerformance.AusstellDatum}">
+                                        <div class="col-1-2"><strong>Ausstelldatum</strong>:</div>
+                                        <div class="col-1-2">{energyPerformance.AusstellDatum}</div>
+                                    </f:if>
+                                    <div class="clearfix"></div>
+                                    <f:if condition="{energyPerformance.GueltigBisDatum}">
+                                        <div class="col-1-2"><strong>gültig bis</strong>:</div>
+                                        <div class="col-1-2">{energyPerformance.GueltigBisDatum}</div>
+                                    </f:if>
+                                    <div class="clearfix"></div>
+                                    <f:if condition="{energyPerformance.PrimaerEnergieTraeger}">
+                                        <div class="col-1-2"><strong>Wesentliche Energieträger</strong>: </div>
+                                        <div class="col-1-2">{energyPerformance.PrimaerEnergieTraeger}</div>
+                                    </f:if>
+                                    <div class="clearfix"></div>
+
+                                    <f:if condition="{energyPerformance.Baujahr}">
+                                        <f:then>
+                                            <div class="col-1-2"><strong>Baujahr (lt. Energieausweis)</strong>:</div>
+                                            <div class="col-1-2">{energyPerformance.Baujahr}</div>
+                                        </f:then>
+                                        <f:else>
+                                            <f:if condition="{expose.createDate}">
+                                                <f:then>
+                                                    <div class="col-1-2"><strong>Baujahr</strong>:</div>
+                                                    <div class="col-1-2">{expose.createDate}</div>
+                                                </f:then>
+                                            </f:if>
+                                        </f:else>
+                                    </f:if>
+                                    <div class="clearfix"></div>
+                                    <f:if condition="{energyPerformance.Norm}">
+                                        <div class="col-1-2"><strong>Energieausweis</strong>:</div>
+                                        <div class="col-1-2">{energyPerformance.Norm}</div>
+                                    </f:if>
+                                    <div class="clearfix"></div>
+                                    <f:if condition="{energyPerformance.Art}">
+                                        <div class="col-1-2"><strong>Ausweisart</strong>:</div>
+                                        <div class="col-1-2">{energyPerformance.Art}</div>
+                                    </f:if>
+                                    <div class="clearfix"></div>
+                                    <hr>
+                                    <div class="clearfix"></div>
+                                    <f:if condition="{energyPerformance.Wert1Typ} && {energyPerformance.Wert1}">
+                                        <div class="col-1-2"><strong>{energyPerformance.Wert1Typ}</strong>:</div>
+                                        <div class="col-1-2">{energyPerformance.Wert1->f:format.number(decimalSeparator:',',thousandsSeparator:'.')} kWh/(m²·a)</div>
+                                    </f:if>
+                                    <div class="clearfix"></div>
+                                    <f:if condition="{energyPerformance.Wert1InclWarmWasser}">
+                                        <div class="col-1-2"><strong>Energieverbrauch für Warmwasser enhalten</strong>:</div>
+                                        <div class="col-1-2">Ja</div>
+                                    </f:if>
+                                    <div class="clearfix"></div>
+                                    <f:if condition="{energyPerformance.Wert2Typ} && {energyPerformance.Wert2}">
+                                        <div class="col-1-2"><strong>{energyPerformance.Wert2Typ}</strong>:</div>
+                                        <div class="col-1-2">{energyPerformance.Wert2->f:format.number(decimalSeparator:',',thousandsSeparator:'.')} kWh/(m²·a)</div>
+                                    </f:if>
+                                    <div class="clearfix"></div>
+                                    <f:if condition="{energyPerformance.Wert2InclWarmWasser}">
+                                        <div class="col-1-2"><strong>Energieverbrauch für Warmwasser enhalten</strong>:</div>
+                                        <div class="col-1-2">Ja</div>
+                                    </f:if>
+                                    </div>
+                                </f:else>
+                            </f:if>
+                        </f:else>
+                    </f:if>
+                </f:case>
+                <f:case value="3">
+                    <div class="col-1-2">
+                    <strong>Energieausweis</strong>:
+                    <div class="clearfix"></div>
+                    für diesen Gebäudetyp nicht notwendig
+                    </div>
+                </f:case>
+                <f:case value="4">
+                    <div class="col-1-2">
+                        <f:if condition="{energyPerformance.Bezeichnung}">
+                            <strong>{energyPerformance.Bezeichnung}</strong>
+                            <div class="clearfix"></div>
+                        </f:if>
+                        <f:if condition="{energyPerformance.Wert1Typ} && {energyPerformance.Wert1}">
+                            <strong>{energyPerformance.Wert1Typ}</strong>: {energyPerformance.Wert1->f:format.number(decimalSeparator:',',thousandsSeparator:'.')} kWh/(m²·a)
+                        </f:if>
+                        <div class="clearfix"></div>
+                        <f:if condition="{energyPerformance.Wert2Typ} && {energyPerformance.Wert2}">
+                            <strong>{energyPerformance.Wert2Typ}</strong>: {energyPerformance.Wert2->f:format.number(decimalSeparator:',',thousandsSeparator:'.')} kWh/(m²·a)
+                        </f:if>
+                        <div class="clearfix"></div>
+                        <f:if condition="{energyPerformance.Wert2InclWarmWasser}">
+                            <strong>Energieverbrauch für Warmwasser enhalten</strong>: Ja
+                        </f:if>
+                    </div>
+                    <div class="clearfix"></div>
+                </f:case>
+                <f:defaultCase>
+                    Kein Energieausweis hinterlegt
+                </f:defaultCase>
+            </f:switch>
+        </f:if>
+        <f:if condition="{i.isOdd}">
+            <div class="clearfix"></div>
+        </f:if>
+        <div class="clearfix"></div>
+
+    </f:for>
+
+    <div class="clearfix h_020"></div>
+    </div>
+
+</f:if>

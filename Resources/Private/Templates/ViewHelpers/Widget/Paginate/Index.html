@@ -1,0 +1,110 @@
+{namespace iwImmo=IWAG\IwImmo\ViewHelpers}
+
+<div class="col-1-2">
+    <div class="iwimmo_ergebnisse">
+        <strong>
+            <f:if condition="{pagination.totalCount} == 1">
+                <f:then>
+                    1 Suchergebnis
+                </f:then>
+                <f:else>
+                    {pagination.totalCount} Suchergebnisse
+                </f:else>
+            </f:if>
+        </strong>
+    </div>
+</div>
+
+<f:if condition="{configuration.insertAbove}">
+    <div class="col-1-2 last">
+        <div class="right">
+            <label for="sorting"><f:translate key="widget.pagination.sorting" /></label>
+            <select id="sorting" class="auto_w" onchange="document.location=this.options[this.selectedIndex].value;">
+                <f:for each="{iwImmo:lists.sorting()}" as="option" key="key">
+                    <f:if condition="{0:key} == {0:pagination.sorting}">
+                        <f:then>
+                            <option value="{f:widget.uri(arguments:{sorting: key}, addQueryStringMethod:'{configuration.addQueryStringMethod}')}" selected="selected">{option}</option>
+                        </f:then>
+                        <f:else>
+                            <option value="{f:widget.uri(arguments:{sorting: key}, addQueryStringMethod:'{configuration.addQueryStringMethod}')}">{option}</option>
+                        </f:else>
+                    </f:if>
+                </f:for>
+            </select>
+
+        </div>
+    </div>
+    <div class="clearfix"></div>
+</f:if>
+
+<f:renderChildren arguments="{contentArguments}" />
+
+<f:if condition="{configuration.insertBelow}">
+    <f:render section="paginator" arguments="{pagination: pagination, configuration: configuration}" />
+</f:if>
+
+<f:section name="paginator">
+    <f:if condition="{pagination.numberOfPages} > 1">
+        <f:then>
+            <ul class="iwimmo_pagination">
+                <f:if condition="{pagination.previousPage}">
+                    <li class="prev">
+                        <f:if condition="{pagination.previousPage} > 1">
+                            <f:then>
+                                <iwImmo:widget.link arguments="{currentPage: pagination.previousPage}" addQueryStringMethod="{configuration.addQueryStringMethod}"><f:translate key="widget.pagination.previous" /></iwImmo:widget.link>
+                            </f:then>
+                            <f:else>
+                                <iwImmo:widget.link addQueryStringMethod="{configuration.addQueryStringMethod}"><f:translate key="widget.pagination.previous" /></iwImmo:widget.link>
+                            </f:else>
+                        </f:if>
+                    </li>
+                </f:if>
+                <f:if condition="{pagination.displayRangeStart} > 1">
+                    <li class="first">
+                        <iwImmo:widget.link addQueryStringMethod="{configuration.addQueryStringMethod}">1</iwImmo:widget.link>
+                    </li>
+                </f:if>
+                <f:if condition="{pagination.hasLessPages}">
+                    <li>...</li>
+                </f:if>
+                <f:for each="{pagination.pages}" as="page">
+                    <f:if condition="{page.isCurrent}">
+                        <f:then>
+                            <li class="current">
+                                {page.number}
+                            </li>
+                        </f:then>
+                        <f:else>
+                            <li>
+                                <f:if condition="{page.number} > 1">
+                                    <f:then>
+                                        <iwImmo:widget.link arguments="{currentPage: page.number}" addQueryStringMethod="{configuration.addQueryStringMethod}">{page.number}</iwImmo:widget.link>
+                                    </f:then>
+                                    <f:else>
+                                        <iwImmo:widget.link addQueryStringMethod="{configuration.addQueryStringMethod}">{page.number}</iwImmo:widget.link>
+                                    </f:else>
+                                </f:if>
+                            </li>
+                        </f:else>
+                    </f:if>
+                </f:for>
+                <f:if condition="{pagination.hasMorePages}">
+                    <li>...</li>
+                </f:if>
+                <f:if condition="{pagination.displayRangeEnd} < {pagination.numberOfPages}">
+                    <li class="last">
+                        <iwImmo:widget.link arguments="{currentPage: pagination.numberOfPages}" addQueryStringMethod="{configuration.addQueryStringMethod}">{pagination.numberOfPages}</iwImmo:widget.link>
+                    </li>
+                </f:if>
+
+                <f:if condition="{pagination.nextPage}">
+                    <li class="next">
+                        <iwImmo:widget.link arguments="{currentPage: pagination.nextPage}" addQueryStringMethod="{configuration.addQueryStringMethod}"><f:translate key="widget.pagination.next" /></iwImmo:widget.link>
+                    </li>
+                </f:if>
+            </ul>
+        </f:then>
+    </f:if>
+
+    <div class="clearfix"></div>
+</f:section>

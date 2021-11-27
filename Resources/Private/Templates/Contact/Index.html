@@ -1,0 +1,78 @@
+<div class="h_020"></div>
+<div class="iwimmo">
+    <h1>Kontakt</h1>
+
+    <f:form id="contact_form" action="send" controller="Contact" pluginName="contact" objectName="contact"
+            object="{contact}" method="post"
+            pageUid="{settings.contact.confirmation.pid}">
+
+        <f:form.hidden property="expose" value="{expose.onlineId}"/>
+
+        <div class="grid">
+
+            <div class="col-1-2">
+                <h5>Anrede*</h5>
+                <f:form.select id="salutation" property="salutation" options="{0:'Anrede', Herr:'Herr', Frau:'Frau'}"/>
+            </div>
+
+            <div class="col-1-2">
+                <h5>Vorname*</h5>
+                <f:form.textfield id="firstName" property="firstName"/>
+            </div>
+            <div class="clearfix"></div>
+
+            <div class="col-1-2">
+                <h5>Nachname*</h5>
+                <f:form.textfield id="lastName" property="lastName"/>
+            </div>
+
+            <div class="col-1-2">
+                <h5>Email*</h5>
+                <f:form.textfield id="email" property="email"/>
+            </div>
+            <div class="clearfix"></div>
+
+            <div class="col-1-2">
+                <h5>Telefon{f:if(condition:'{expose.requiredFormFields.phone}', then:'*')}</h5>
+                <f:form.textfield id="phone" property="phone"/>
+            </div>
+
+            <div class="col-1-2">
+                <h5>Straße{f:if(condition:'{expose.requiredFormFields.street}', then:'*')}</h5>
+                <f:form.textfield id="street" property="street"/>
+            </div>
+            <div class="clearfix"></div>
+
+            <div class="col-1-2">
+                <h5>Postleitzahl{f:if(condition:'{expose.requiredFormFields.zip}', then:'*')}</h5>
+                <f:form.textfield id="zip" property="zip"/>
+            </div>
+
+            <div class="col-1-2">
+                <h5>Stadt{f:if(condition:'{expose.requiredFormFields.city}', then:'*')}</h5>
+                <f:form.textfield id="city" property="city"/>
+            </div>
+            <div class="clearfix"></div>
+
+            <div class="col-1-2">
+                <h5>Mobil{f:if(condition:'{expose.requiredFormFields.mobilPhone}', then:'*')}</h5>
+                <f:form.textfield id="mobile" property="mobile"/>
+            </div>
+
+            <div class="clearfix"></div>
+
+            <div class="col-1-1 padding-right_20">
+                <h5>Nachricht{f:if(condition:'{expose.requiredFormFields.message}', then:'*')}</h5>
+                <f:form.textarea rows="5" cols="39" id="message" property="message"/>
+            </div>
+
+            <div class="col-1-2 padding-right_20 right">
+                <f:form.submit value="Informationen anfordern" class="button_01"/>
+            </div>
+        </div>
+    </f:form>
+
+    <div class="clearfix"></div>
+</div>
+
+<f:render partial="Contact/Validation" arguments="{expose: expose}"/>

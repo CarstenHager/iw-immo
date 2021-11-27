@@ -1,0 +1,59 @@
+<T3DataStructure>
+    <sheets>
+        <general>
+            <ROOT>
+                <TCEforms>
+                    <sheetTitle>LLL:EXT:iw_immo/Resources/Private/Language/locallang.xlf:flexform.sheet.general</sheetTitle>
+                </TCEforms>
+                <type>array</type>
+                <el>
+
+                    <settings.list.pid.override>
+                        <TCEforms>
+                            <label>LLL:EXT:iw_immo/Resources/Private/Language/locallang.xlf:settings.list.pid</label>
+                            <config>
+                                <type>group</type>
+                                <internal_type>db</internal_type>
+                                <allowed>pages</allowed>
+                                <size>1</size>
+                                <maxitems>1</maxitems>
+                                <minitems>1</minitems>
+                                <show_thumbs>1</show_thumbs>
+                            </config>
+                        </TCEforms>
+                    </settings.list.pid.override>
+
+                </el>
+            </ROOT>
+        </general>
+
+        <parameters>
+            <ROOT>
+                <TCEforms>
+                    <sheetTitle>LLL:EXT:iw_immo/Resources/Private/Language/locallang.xlf:flexform.sheet.parameter</sheetTitle>
+                </TCEforms>
+                <type>array</type>
+                <el>
+                    <settings.list.parameters.geoid.override>
+                        <TCEforms>
+                            <label>LLL:EXT:iw_immo/Resources/Private/Language/locallang.xlf:settings.list.parameters.geoid</label>
+                            <config>
+                                <type>select</type>
+                                <renderType>selectSingle</renderType>
+                                <itemsProcFunc>IWAG\IwImmo\Utility\FlexformUtility->getAvailableCountries</itemsProcFunc>
+                            </config>
+                        </TCEforms>
+                    </settings.list.parameters.geoid.override>
+                </el>
+            </ROOT>
+        </parameters>
+        <!--
+        # ##############################################################################################################
+        #                           Template
+        # ##############################################################################################################
+        -->
+
+        <template>EXT:iw_immo/Configuration/FlexForms/Parts/Template.xml</template>
+
+    </sheets>
+</T3DataStructure>

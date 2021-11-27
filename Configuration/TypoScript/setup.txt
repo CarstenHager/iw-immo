@@ -1,0 +1,112 @@
+page {
+    includeCSS {
+        iwimmo = EXT:iw_immo/Resources/Public/Css/iwimmo.css
+    }
+
+    includeJSFooter {
+        iwimmo_fc = EXT:iw_immo/Resources/Public/Js/Fc.js
+        iwimmo_slideshow = EXT:iw_immo/Resources/Public/Js/SlideShow.js
+    }
+}
+
+plugin.tx_iwimmo {
+    settings {
+        # Einstellungen der Suche
+        search {
+            geoid = 108
+        }
+
+        contact {
+            confirmation  {
+                # Bestätigungsseite
+                # implementiert stdWrap
+                pid =
+            }
+			domain =
+        }
+
+        # Einstellungen der Detailansicht
+        detail {
+            # auf dieser Seite liegt das Detail-Plugin
+            # implementiert stdWrap
+            pid =
+
+            # nur dieses Objekt anzeigen
+            defaultExposeId =
+
+        }
+
+        # Einstellungen der Liste
+        list {
+            # auf dieser Seite liegt das Listen-Plugin
+            # implementiert stdWrap
+            pid =
+
+            # Alle Properties implementieren stdWrap
+			properties {
+				equipmentLimit =
+                premium =
+			}
+
+            # Default Parameter für die Listenanzeige
+            # Alle Parameters implementieren stdWrap
+            parameters {
+                # Einschränkung auf Land
+                # int (D: 108, AT: 103, CH: 134)
+                geoid = 108
+                # Immobilienart (
+                # string (Liste mit IDs, kommagetrennt)
+                etype =
+                # Immobilienkategorien
+                # string (Liste mit IDs, kommagetrennt)
+                ecat =
+                # Objektart
+                # int (0: alle, 1: Kauf, 2: Miete)
+                esr =
+                # Ausstattungsmerkmale
+                # string (Liste mit IDs, kommagetrennt)
+                eqid =
+                # Mindestanzahl an Zimmern
+                # int
+                roomi =
+                # Höchstanzahl an Zimmern
+                # int
+                rooma =
+                # Minimaler Kaufpreis / Miete
+                # int
+                primi =
+                # Maximaler Kaufpreis / Miete
+                # int
+                prima =
+                # als „Projekt extern“ markierte Objekte anzeigen
+                # bool 0/1
+                customerprojects =
+                # nur wenn customerprojects=1
+                # nicht nur Customer-Projekte anzeigen sondern auch normle Objekte
+                # bool 0/1
+                includeiwobj =
+                # Optionales Feld zum Abfragen des Intranet-Feldes in der DB.
+                # string
+                intranet =
+            }
+
+            # default Parameter für die Liste. Können im Listenplugin überschrieben werden
+            paginate {
+                # Anzah lder Einträge pro Seite
+                itemsPerPage = 10
+                # Pagebrowser über der Liste anzeigen
+                insertAbove = 0
+                # Pagebrowser unter der Liste anzeigen
+                insertBelow = 1
+                # Alle Parameter des Suchformulars müssen im Pagebrowser wieder übergeben werden. Prio auf POST
+                addQueryStringMethod = GET,POST
+                # Maximale Anzahl der Links die im Pagebrowser angezeigt werden
+                maximumNumberOfLinks = 7
+            }
+        }
+    }
+    features {
+        # Default Controller und Action aus URL entfernen
+        skipDefaultArguments = 1
+    }
+}

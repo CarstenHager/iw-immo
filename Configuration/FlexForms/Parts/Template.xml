@@ -1,0 +1,55 @@
+<T3DataStructure>
+    <ROOT>
+        <TCEforms>
+            <sheetTitle>LLL:EXT:iw_immo/Resources/Private/Language/locallang.xlf:flexform.sheet.template</sheetTitle>
+        </TCEforms>
+        <type>array</type>
+        <el>
+            <!-- verzeichnis mit layouts -->
+            <!--todo: auf view.layoutRootPathS umstellen wenn https://forge.typo3.org/issues/43504 gefixt-->
+            <view.layoutRootPath>
+                <TCEforms>
+                    <label>LLL:EXT:iw_immo/Resources/Private/Language/locallang.xlf:view.layoutRootPaths</label>
+                    <config>
+                        <!--todo: auf type group umstellen wenn https://forge.typo3.org/issues/43504 gefixt-->
+                        <type>input</type>
+                        <!--<type>group</type>-->
+                        <!--<internal_type>folder</internal_type>-->
+                        <!--<maxitems>1</maxitems>-->
+                        <!--<size>1</size>-->
+                    </config>
+                </TCEforms>
+            </view.layoutRootPath>
+            <!-- verzeichnis mit einzelnen templates -->
+            <!--todo: auf view.templateRootPathS umstellen wenn https://forge.typo3.org/issues/43504 gefixt-->
+            <view.templateRootPath>
+                <TCEforms>
+                    <label>LLL:EXT:iw_immo/Resources/Private/Language/locallang.xlf:view.templateRootPaths</label>
+                    <config>
+                        <!--todo: auf type group umstellen wenn https://forge.typo3.org/issues/43504 gefixt-->
+                        <type>input</type>
+                        <!--<type>group</type>-->
+                        <!--<internal_type>folder</internal_type>-->
+                        <!--<maxitems>1</maxitems>-->
+                        <!--<size>1</size>-->
+                    </config>
+                </TCEforms>
+            </view.templateRootPath>
+            <!-- verzeichnis mit partials -->
+            <!--todo: auf view.partialRootPathS umstellen wenn https://forge.typo3.org/issues/43504 gefixt-->
+            <view.partialRootPath>
+                <TCEforms>
+                    <label>LLL:EXT:iw_immo/Resources/Private/Language/locallang.xlf:view.partialRootPaths</label>
+                    <config>
+                        <!--todo: auf type group umstellen wenn https://forge.typo3.org/issues/43504 gefixt-->
+                        <type>input</type>
+                        <!--<type>group</type>-->
+                        <!--<internal_type>folder</internal_type>-->
+                        <!--<maxitems>1</maxitems>-->
+                        <!--<size>1</size>-->
+                    </config>
+                </TCEforms>
+            </view.partialRootPath>
+        </el>
+    </ROOT>
+</T3DataStructure>

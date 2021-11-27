@@ -1,0 +1,27 @@
+{namespace iwImmo=IWAG\IwImmo\ViewHelpers}
+
+<div class="iwimmo">
+    <h1>Ortsauswahl nicht eindeutig</h1>
+
+    <f:form id="search_form" controller="List" action="index" pluginName="list" objectName="listsSearchDemand" object="{listsSearchDemand}"  method="post"
+            noCache="1" pageUid="{settings.list.pid}">
+
+        <div class="grid">
+
+            <div class="col-1-2">
+                <h5>Wo suchen Sie?</h5>
+                <f:form.select id="where" property="where" options="{iwImmo:selectLocationData(locationData:listsSearchDemand.geoDataForLocation)}"/>
+
+                <br/>
+            </div>
+            <div class="clearfix"></div>
+
+
+            <div class="col-1-2 padding-right_20">
+                <f:form.submit value="Suchen" class="button_01"/>
+            </div>
+        </div>
+
+    </f:form>
+
+</div>

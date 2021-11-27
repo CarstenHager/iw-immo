@@ -1,0 +1,134 @@
+<script type="text/javascript">
+
+    var isCompanyRequired = "{f:if(condition:'{expose.requiredFormFields.company}', then:'1', else:'0')}";
+    var isStreetRequired = "{f:if(condition:'{expose.requiredFormFields.street}', then:'1', else:'0')}";
+    var isZipRequired = "{f:if(condition:'{expose.requiredFormFields.zip}', then:'1', else:'0')}";
+    var isCityRequired = "{f:if(condition:'{expose.requiredFormFields.city}', then:'1', else:'0')}";
+    var isPhoneRequired = "{f:if(condition:'{expose.requiredFormFields.phone}', then:'1', else:'0')}";
+    var isFaxRequired = "{f:if(condition:'{expose.requiredFormFields.fax}', then:'1', else:'0')}";
+    var isMobileRequired = "{f:if(condition:'{expose.requiredFormFields.mobilPhone}', then:'1', else:'0')}";
+    var isMessageRequired = "{f:if(condition:'{expose.requiredFormFields.message}', then:'1', else:'0')}";
+
+    $(document).ready(function () {
+
+        $("#contact_form").validate();
+
+
+        $("#firstName").rules("add", {
+            required: true,
+            messages: {
+                required: "Bitte Vornamen eingeben"
+            }
+        });
+
+
+
+        $("#lastName").rules("add", {
+            required: true,
+            messages: {
+                required: "Bitte Namen eingeben"
+            }
+        });
+
+
+
+        $("#email").rules("add", {
+            required: true,
+            email   : true,
+            messages: {
+                email: "Bitte gültige Emailadresse eingeben",
+                required: "Bitte Emailadresse eingeben"
+            }
+        });
+
+        //custom validator
+        $.validator.addMethod("valueNotEquals", function(value, element, arg){
+            return arg != value;
+        }, "Bitte wählen Sie einen Wert aus.");
+
+        $("#salutation").rules("add", {
+            valueNotEquals: "0",
+            messages: {
+                valueNotEquals: "Bitte wählen Sie die Anrede aus."
+            }
+        });
+
+        if($("#company").length && isCompanyRequired == '1') {
+            $("#company").rules("add", {
+                required: true,
+                messages: {
+                    required: "Bitte Firmennamen eingeben"
+                }
+            });
+        }
+
+
+        if($("#street").length && isStreetRequired == '1') {
+            $("#street").rules("add", {
+                required: true,
+                messages: {
+                    required: "Bitte Straße eingeben"
+                }
+            });
+        }
+
+        if($("#zip").length && isZipRequired == '1') {
+            $("#zip").rules("add", {
+                required: true,
+                messages: {
+                    required: "Bitte Postleitzahl eingeben"
+                }
+            });
+        }
+
+        if($("#city").length && isCityRequired == '1') {
+            $("#city").rules("add", {
+                required: true,
+                messages: {
+                    required: "Bitte Stadt eingeben"
+                }
+            });
+        }
+
+
+        if($("#phone").length && isPhoneRequired == '1') {
+            $("#phone").rules("add", {
+                required: true,
+                messages: {
+                    required: "Bitte Telefonnummer eingeben"
+                }
+            });
+        }
+
+        if($("#fax").length && isFaxRequired == '1') {
+            $("#fax").rules("add", {
+                required: true,
+                messages: {
+                    required: "Bitte Telefonnummer eingeben"
+                }
+            });
+        }
+
+
+        if($("#mobile").length && isMobileRequired == '1') {
+            $("#mobile").rules("add", {
+                required: true,
+                messages: {
+                    required: "Bitte Mobiltelefonnummer eingeben"
+                }
+            });
+        }
+
+        if($("#message").length && isMessageRequired == '1') {
+            $("#message").rules("add", {
+                required: true,
+                messages: {
+                    required: "Bitte Nachricht eingeben"
+                }
+            });
+        }
+
+
+    });
+
+</script>

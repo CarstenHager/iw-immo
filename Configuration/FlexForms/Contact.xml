@@ -1,0 +1,118 @@
+<T3DataStructure>
+    <sheets>
+        <general>
+            <ROOT>
+                <TCEforms>
+                    <sheetTitle>LLL:EXT:iw_immo/Resources/Private/Language/locallang.xlf:flexform.sheet.general</sheetTitle>
+                </TCEforms>
+                <type>array</type>
+                <el>
+                    <switchableControllerActions>
+                        <TCEforms>
+                            <label>Standardaktion des Plugins</label>
+                            <config>
+                                <type>select</type>
+                                <renderType>selectSingle</renderType>
+                                <items>
+                                    <numIndex index="0">
+                                        <numIndex index="0">Formular</numIndex>
+                                        <numIndex index="1">Contact->index</numIndex>
+                                    </numIndex>
+                                    <numIndex index="1">
+                                        <numIndex index="0">Bestätigung</numIndex>
+                                        <numIndex index="1">Contact->confirmation;Contact->send</numIndex>
+                                    </numIndex>
+                                </items>
+                            </config>
+                        </TCEforms>
+                    </switchableControllerActions>
+
+                    <settings.contact.confirmation.pid.override>
+                        <TCEforms>
+                            <label>LLL:EXT:iw_immo/Resources/Private/Language/locallang.xlf:settings.contact.confirmation.pid</label>
+                            <config>
+                                <type>group</type>
+                                <internal_type>db</internal_type>
+                                <allowed>pages</allowed>
+                                <size>1</size>
+                                <maxitems>1</maxitems>
+                                <minitems>1</minitems>
+                                <show_thumbs>1</show_thumbs>
+                            </config>
+                        </TCEforms>
+                    </settings.contact.confirmation.pid.override>
+
+                    <settings.list.pid.override>
+                        <TCEforms>
+                            <label>LLL:EXT:iw_immo/Resources/Private/Language/locallang.xlf:settings.list.pid</label>
+                            <config>
+                                <type>group</type>
+                                <internal_type>db</internal_type>
+                                <allowed>pages</allowed>
+                                <size>1</size>
+                                <maxitems>1</maxitems>
+                                <minitems>1</minitems>
+                                <show_thumbs>1</show_thumbs>
+                            </config>
+                        </TCEforms>
+                    </settings.list.pid.override>
+
+                    <settings.detail.pid.override>
+                        <TCEforms>
+                            <label>LLL:EXT:iw_immo/Resources/Private/Language/locallang.xlf:settings.detail.pid</label>
+                            <config>
+                                <type>group</type>
+                                <internal_type>db</internal_type>
+                                <allowed>pages</allowed>
+                                <size>1</size>
+                                <maxitems>1</maxitems>
+                                <minitems>1</minitems>
+                                <show_thumbs>1</show_thumbs>
+                            </config>
+                        </TCEforms>
+                    </settings.detail.pid.override>
+                </el>
+            </ROOT>
+        </general>
+
+        <contact>
+            <ROOT>
+                <TCEforms>
+                    <sheetTitle>LLL:EXT:iw_immo/Resources/Private/Language/locallang.xlf:flexform.sheet.contact</sheetTitle>
+                </TCEforms>
+                <type>array</type>
+                <el>
+                    <settings.contact.domain>
+                        <TCEforms>
+                            <label>LLL:EXT:iw_immo/Resources/Private/Language/locallang.xlf:settings.contact.domain</label>
+                            <config>
+                                <type>input</type>
+                            </config>
+                        </TCEforms>
+                    </settings.contact.domain>
+
+                    <settings.contact.defaultExposeId.override>
+                        <TCEforms>
+                            <label>
+                                LLL:EXT:iw_immo/Resources/Private/Language/locallang.xlf:settings.detail.defaultExposeId
+                            </label>
+                            <config>
+                                <type>input</type>
+                            </config>
+                        </TCEforms>
+                    </settings.contact.defaultExposeId.override>
+                </el>
+            </ROOT>
+        </contact>
+
+
+        <!--
+        # ##############################################################################################################
+        #                           Template
+        # ##############################################################################################################
+        -->
+
+        <template>EXT:iw_immo/Configuration/FlexForms/Parts/Template.xml</template>
+
+    </sheets>
+</T3DataStructure>

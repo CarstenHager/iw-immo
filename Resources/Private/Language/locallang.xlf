@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+    <file source-language="de" datatype="plaintext" original="messages" date="" product-name="iw_immo">
+        <header/>
+        <body>
+            <trans-unit id="plugin.wizardLabel" xml:space="preserve">
+				<source>Immowelt AG</source>
+			</trans-unit>
+
+            <trans-unit id="plugin.search.label" xml:space="preserve">
+				<source>Immowelt Suche</source>
+			</trans-unit>
+            <trans-unit id="plugin.search.wizardName" xml:space="preserve">
+				<source>Suche</source>
+			</trans-unit>
+            <trans-unit id="plugin.search.wizardDescription" xml:space="preserve">
+				<source>Plugin zur Immobiliensuche in die Seite einfügen</source>
+			</trans-unit>
+
+            <trans-unit id="plugin.list.label" xml:space="preserve">
+				<source>Immowelt Liste</source>
+			</trans-unit>
+            <trans-unit id="plugin.list.wizardName" xml:space="preserve">
+				<source>Liste</source>
+			</trans-unit>
+            <trans-unit id="plugin.list.wizardDescription" xml:space="preserve">
+				<source>Plugin zur Anzeige der Objektliste in die Seite einfügen</source>
+			</trans-unit>
+
+            <trans-unit id="plugin.detail.label" xml:space="preserve">
+				<source>Immowelt Exposé</source>
+			</trans-unit>
+            <trans-unit id="plugin.detail.wizardName" xml:space="preserve">
+				<source>Exposé</source>
+			</trans-unit>
+            <trans-unit id="plugin.detail.wizardDescription" xml:space="preserve">
+				<source>Plugin zur Anzeige der Exposés in die Seite einfügen</source>
+			</trans-unit>
+
+            <trans-unit id="plugin.contact.label" xml:space="preserve">
+				<source>Immowelt Kontaktformular</source>
+			</trans-unit>
+            <trans-unit id="plugin.contact.wizardName" xml:space="preserve">
+				<source>Kontaktformular</source>
+			</trans-unit>
+            <trans-unit id="plugin.contact.wizardDescription" xml:space="preserve">
+				<source>Plugin zur Anzeige eines Kontaktformulars in die Seite einfügen</source>
+			</trans-unit>
+
+            <trans-unit id="plugin.calculator.label" xml:space="preserve">
+				<source>Immowelt Rechner</source>
+			</trans-unit>
+            <trans-unit id="plugin.calculator.wizardName" xml:space="preserve">
+				<source>Rechner</source>
+			</trans-unit>
+            <trans-unit id="plugin.calculator.wizardDescription" xml:space="preserve">
+				<source>Plugin zur Anzeige der Rechner in die Seite einfügen</source>
+			</trans-unit>
+
+            <trans-unit id="flexform.sheet.general" xml:space="preserve">
+				<source>Allgemein</source>
+			</trans-unit>
+
+			<trans-unit id="flexform.sheet.parameter" xml:space="preserve">
+				<source>Einstellungen</source>
+			</trans-unit>
+
+			<trans-unit id="flexform.sheet.detail" xml:space="preserve">
+				<source>Exposé</source>
+			</trans-unit>
+
+			<trans-unit id="settings.calculator.pid" xml:space="preserve">
+				<source>Seite mit dem Finanzierungsrechner</source>
+			</trans-unit>
+
+			<trans-unit id="flexform.sheet.parameter.description" xml:space="preserve">
+				<source>Die Standardeinstellungen für die Listenansicht werden durch die Eingaben über das Suchformular überschrieben.</source>
+			</trans-unit>
+
+			<trans-unit id="flexform.sheet.template" xml:space="preserve">
+				<source>Templates</source>
+			</trans-unit>
+
+			<trans-unit id="flexform.sheet.paginate" xml:space="preserve">
+				<source>Pagebrowser</source>
+			</trans-unit>
+
+			<trans-unit id="flexform.sheet.calculator" xml:space="preserve">
+				<source>Finanzierungsrechner</source>
+			</trans-unit>
+
+			<trans-unit id="flexform.sheet.contact" xml:space="preserve">
+				<source>Kontaktformular</source>
+			</trans-unit>
+
+
+			<trans-unit id="flexform.sheet.advanced" xml:space="preserve">
+				<source>Erweitert</source>
+			</trans-unit>
+
+
+			<trans-unit id="settings.list.pid" xml:space="preserve">
+				<source>Seite der Listenansicht</source>
+			</trans-unit>
+
+            <trans-unit id="settings.detail.pid" xml:space="preserve">
+				<source>Seite der Exposéansicht</source>
+			</trans-unit>
+
+            <trans-unit id="settings.search.pid" xml:space="preserve">
+				<source>Seite des Suchformulars</source>
+			</trans-unit>
+
+
+            <trans-unit id="settings.detail.defaultExposeId" xml:space="preserve">
+				<source>Nur dieses Exposé anzeigen (OnlineID)</source>
+			</trans-unit>
+
+            <trans-unit id="settings.contact.domain" xml:space="preserve">
+				<source>Absenderdomain</source>
+			</trans-unit>
+
+
+            <trans-unit id="view.templateRootPaths" xml:space="preserve">
+				<source>Templates aus diesem Verzeichnis benutzen</source>
+			</trans-unit>
+			<trans-unit id="view.partialRootPaths" xml:space="preserve">
+				<source>Partials aus diesem Verzeichnis benutzen</source>
+			</trans-unit>
+			<trans-unit id="view.layoutRootPaths" xml:space="preserve">
+				<source>Layouts aus diesem Verzeichnis benutzen</source>
+			</trans-unit>
+
+
+            <trans-unit id="settings.list.parameters.geoid.108" xml:space="preserve">
+                <source>Deutschland</source>
+            </trans-unit>
+            <trans-unit id="settings.list.parameters.geoid.104" xml:space="preserve">
+                <source>Belgien</source>
+            </trans-unit>
+            <trans-unit id="settings.list.parameters.geoid.107" xml:space="preserve">
+                <source>Dänemark</source>
+            </trans-unit>
+            <trans-unit id="settings.list.parameters.geoid.110" xml:space="preserve">
+                <source>Finnland</source>
+            </trans-unit>
+            <trans-unit id="settings.list.parameters.geoid.111" xml:space="preserve">
+                <source>Frankreich</source>
+            </trans-unit>
+            <trans-unit id="settings.list.parameters.geoid.112" xml:space="preserve">
+                <source>Griechenland</source>
+            </trans-unit>
+            <trans-unit id="settings.list.parameters.geoid.114" xml:space="preserve">
+                <source>Großbritannien</source>
+            </trans-unit>
+            <trans-unit id="settings.list.parameters.geoid.115" xml:space="preserve">
+                <source>Irland</source>
+            </trans-unit>
+            <trans-unit id="settings.list.parameters.geoid.113" xml:space="preserve">
+                <source>Italien</source>
+            </trans-unit>
+            <trans-unit id="settings.list.parameters.geoid.118" xml:space="preserve">
+                <source>Kroatien</source>
+            </trans-unit>
+            <trans-unit id="settings.list.parameters.geoid.126" xml:space="preserve">
+                <source>Niederlande</source>
+            </trans-unit>
+            <trans-unit id="settings.list.parameters.geoid.127" xml:space="preserve">
+                <source>Norwegen</source>
+            </trans-unit>
+            <trans-unit id="settings.list.parameters.geoid.103" xml:space="preserve">
+                <source>Österreich</source>
+            </trans-unit>
+            <trans-unit id="settings.list.parameters.geoid.128" xml:space="preserve">
+                <source>Polen</source>
+            </trans-unit>
+            <trans-unit id="settings.list.parameters.geoid.129" xml:space="preserve">
+                <source>Portugal</source>
+            </trans-unit>
+            <trans-unit id="settings.list.parameters.geoid.133" xml:space="preserve">
+                <source>Schweden</source>
+            </trans-unit>
+            <trans-unit id="settings.list.parameters.geoid.134" xml:space="preserve">
+                <source>Schweiz</source>
+            </trans-unit>
+            <trans-unit id="settings.list.parameters.geoid.136" xml:space="preserve">
+                <source>Slowenien</source>
+            </trans-unit>
+            <trans-unit id="settings.list.parameters.geoid.137" xml:space="preserve">
+                <source>Spanien</source>
+            </trans-unit>
+            <trans-unit id="settings.list.parameters.geoid.138" xml:space="preserve">
+                <source>Tschechien</source>
+            </trans-unit>
+            <trans-unit id="settings.list.parameters.geoid.139" xml:space="preserve">
+                <source>Türkei</source>
+            </trans-unit>
+
+			<trans-unit id="settings.list.parameters.esr" xml:space="preserve">
+				<source>Objektart (Miete/Kauf)</source>
+			</trans-unit>
+            <trans-unit id="settings.list.parameters.esr.0" xml:space="preserve">
+				<source>Alle</source>
+			</trans-unit>
+            <trans-unit id="settings.list.parameters.esr.1" xml:space="preserve">
+				<source>Kauf</source>
+			</trans-unit>
+            <trans-unit id="settings.list.parameters.esr.2" xml:space="preserve">
+				<source>Miete</source>
+			</trans-unit>
+			<trans-unit id="settings.list.parameters.geoid" xml:space="preserve">
+				<source>Land-Auswahl</source>
+			</trans-unit>
+			<trans-unit id="settings.list.parameters.etypes" xml:space="preserve">
+				<source>Immobilienarten (kommasepariert)</source>
+			</trans-unit>
+			<trans-unit id="settings.list.parameters.ecat" xml:space="preserve">
+				<source>Immobilienkategorien (kommasepariert)</source>
+			</trans-unit>
+			<trans-unit id="settings.list.parameters.eqid" xml:space="preserve">
+				<source>Ausstattungsmerkmale (kommasepariert, mit "-" ausschließen)</source>
+			</trans-unit>
+			<trans-unit id="settings.list.parameters.roomi" xml:space="preserve">
+				<source>Mindestanzahl an Zimmern</source>
+			</trans-unit>
+			<trans-unit id="settings.list.parameters.sort" xml:space="preserve">
+				<source>Sortierung</source>
+			</trans-unit>
+			<trans-unit id="settings.list.parameters.rooma" xml:space="preserve">
+				<source>Höchstanzahl an Zimmern</source>
+			</trans-unit>
+			<trans-unit id="settings.list.parameters.primi" xml:space="preserve">
+				<source>Minimaler Kaufpreis / Miete</source>
+			</trans-unit>
+			<trans-unit id="settings.list.parameters.prima" xml:space="preserve">
+				<source>Maximaler Kaufpreis / Miete</source>
+			</trans-unit>
+
+			<trans-unit id="settings.list.properties.premium" xml:space="preserve">
+                <source>Objekt-Ids mit der Premiumplatzierung</source>
+            </trans-unit>
+
+            <trans-unit id="settings.list.properties.equipmentLimit" xml:space="preserve">
+                <source>Maximale Anzahl an Ausstattungsmerkmalen auf der Liste</source>
+            </trans-unit>
+
+            <!--
+                        P A G E B R O W S E R
+            -->
+
+			<trans-unit id="settings.list.paginate.itemsPerPage" xml:space="preserve">
+				<source>Maximale Objekte pro Seite</source>
+			</trans-unit>
+
+			<trans-unit id="settings.list.paginate.maximumNumberOfLinks" xml:space="preserve">
+				<source>Maximale Anzahl der Links in der Navigation</source>
+			</trans-unit>
+
+			<trans-unit id="settings.list.paginate.insertAbove" xml:space="preserve">
+				<source>Sortierung über der Liste aktivieren</source>
+			</trans-unit>
+
+			<trans-unit id="settings.list.paginate.insertAbove.0" xml:space="preserve">
+				<source>Sortierung wird über der Liste angezeigt</source>
+			</trans-unit>
+
+			<trans-unit id="settings.list.paginate.insertBelow" xml:space="preserve">
+				<source>Pagebrowser unter der Liste aktivieren</source>
+			</trans-unit>
+
+			<trans-unit id="settings.list.paginate.insertBelow.0" xml:space="preserve">
+				<source>Der Pagebrowser wird unter der Liste angezeigt</source>
+			</trans-unit>
+
+
+
+			<trans-unit id="settings.contact.confirmation.pid" xml:space="preserve">
+				<source>Seite zur Bestätigung des Formularversands</source>
+			</trans-unit>
+
+
+            <!--
+
+                        P A G E B R O W S E R
+
+            -->
+
+            <trans-unit id="widget.pagination.previous" xml:space="preserve">
+				<source>zurück</source>
+			</trans-unit>
+
+			<trans-unit id="widget.pagination.next" xml:space="preserve">
+				<source>weiter</source>
+			</trans-unit>
+
+			<trans-unit id="widget.pagination.sorting" xml:space="preserve">
+				<source>Sortierung</source>
+			</trans-unit>
+
+
+            <!--
+
+                        S O R T I E R U N G
+
+            -->
+
+            <trans-unit id="sorting.default" xml:space="preserve">
+				<source>Standard</source>
+			</trans-unit>
+
+            <trans-unit id="sorting.createdate_desc" xml:space="preserve">
+				<source>aktuellste Angebote zuerst</source>
+			</trans-unit>
+
+            <trans-unit id="sorting.price" xml:space="preserve">
+				<source>geringster Preis zuerst</source>
+			</trans-unit>
+
+            <trans-unit id="sorting.price_desc" xml:space="preserve">
+				<source>höchster Preis zuerst</source>
+			</trans-unit>
+
+            <trans-unit id="sorting.wohnflaeche" xml:space="preserve">
+				<source>kleinste Fläche zuerst</source>
+			</trans-unit>
+
+            <trans-unit id="sorting.wohnflaeche_desc" xml:space="preserve">
+				<source>größte Fläche zuerst</source>
+			</trans-unit>
+
+            <trans-unit id="sorting.city" xml:space="preserve">
+				<source>Ort aufsteigend</source>
+			</trans-unit>
+
+            <trans-unit id="sorting.city_desc" xml:space="preserve">
+				<source>Ort absteigend</source>
+			</trans-unit>
+
+
+
+        </body>
+    </file>
+
+</xliff>

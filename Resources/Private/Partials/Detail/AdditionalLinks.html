@@ -1,0 +1,29 @@
+<f:if condition="{expose.hasAdditionalLinks}">
+
+    <h3>Ergänzende Informationen</h3>
+    <hr>
+
+    <ul class="attachments">
+        <f:if condition="{expose.attachments->f:count()}">
+            <f:for each="{expose.attachments}" as="attachment">
+                <li>
+                    <a href="{attachment.url}">{attachment.description}</a>
+                </li>
+            </f:for>
+        </f:if>
+        <f:if condition="{expose.externalLink->f:count()}">
+            <f:for each="{expose.externalLink}" as="externalLink">
+                <li>
+                    <a href="{externalLink.url}">{externalLink.description}</a>
+                </li>
+            </f:for>
+        </f:if>
+        <f:if condition="{expose.financeCalculator.visible} && {settings.calculator.pid}">
+            <li>
+                <f:link.action pluginName="calculator" controller="Calculator" arguments="{calculatorPrice: expose.floatPrice}" pageUid="{settings.calculator.pid}">Finanzierungsrechner</f:link.action>
+            </li>
+        </f:if>
+    </ul>
+
+    <div class="clearfix h_020"></div>
+</f:if>

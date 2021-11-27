@@ -1,0 +1,27 @@
+{namespace iwImmo = IWAG\IwImmo\ViewHelpers}
+<div class="iwimmo">
+
+    <h1>{expose.title->f:format.raw()}</h1>
+
+    <iwImmo:printLink eid="{expose.id}" class="right print"><var class="icon_print"></var> Exposé drucken</iwImmo:printLink>
+    <div class="clearfix h_005"></div>
+
+    <f:render partial="Detail/Slideshow" arguments="{expose:expose}"/>
+
+    <f:render partial="Detail/Data" arguments="{expose:expose}"/>
+
+    <f:render partial="Detail/Equipment" arguments="{expose:expose}"/>
+
+    <f:render partial="Detail/AdditionalLinks" arguments="{expose:expose}"/>
+
+    <f:render partial="Detail/Description" arguments="{expose:expose}"/>
+
+    <f:render partial="Detail/EnEv" arguments="{expose:expose}"/>
+
+    <f:render partial="Detail/Location" arguments="{expose:expose}"/>
+
+    <f:render partial="Detail/Contact" arguments="{expose:expose}"/>
+
+
+
+</div>

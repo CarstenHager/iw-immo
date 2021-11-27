@@ -1,0 +1,291 @@
+<T3DataStructure>
+    <sheets>
+        <general>
+            <ROOT>
+                <TCEforms>
+                    <sheetTitle>LLL:EXT:iw_immo/Resources/Private/Language/locallang.xlf:flexform.sheet.general</sheetTitle>
+                </TCEforms>
+                <type>array</type>
+                <el>
+                    <settings.detail.pid.override>
+                        <TCEforms>
+                            <label>LLL:EXT:iw_immo/Resources/Private/Language/locallang.xlf:settings.detail.pid</label>
+                            <config>
+                                <type>group</type>
+                                <internal_type>db</internal_type>
+                                <allowed>pages</allowed>
+                                <size>1</size>
+                                <maxitems>1</maxitems>
+                                <minitems>1</minitems>
+                                <show_thumbs>1</show_thumbs>
+                            </config>
+                        </TCEforms>
+                    </settings.detail.pid.override>
+                </el>
+            </ROOT>
+        </general>
+        <parameters>
+            <ROOT>
+                <TCEforms>
+                    <sheetTitle>LLL:EXT:iw_immo/Resources/Private/Language/locallang.xlf:flexform.sheet.parameter</sheetTitle>
+                    <sheetDescription>LLL:EXT:iw_immo/Resources/Private/Language/locallang.xlf:flexform.sheet.parameter.description</sheetDescription>
+                </TCEforms>
+                <type>array</type>
+                <el>
+                    <settings.list.parameters.esr.override>
+                        <TCEforms>
+                            <label>LLL:EXT:iw_immo/Resources/Private/Language/locallang.xlf:settings.list.parameters.esr</label>
+                            <config>
+                                <type>select</type>
+                                <renderType>selectSingle</renderType>
+                                <items type="array">
+                                    <numIndex index="1" type="array">
+                                        <numIndex index="0">LLL:EXT:iw_immo/Resources/Private/Language/locallang.xlf:settings.list.parameters.esr.0</numIndex>
+                                        <numIndex index="1">0</numIndex>
+                                    </numIndex>
+                                    <numIndex index="2" type="array">
+                                        <numIndex index="0">LLL:EXT:iw_immo/Resources/Private/Language/locallang.xlf:settings.list.parameters.esr.1</numIndex>
+                                        <numIndex index="1">1</numIndex>
+                                    </numIndex>
+                                    <numIndex index="3" type="array">
+                                        <numIndex index="0">LLL:EXT:iw_immo/Resources/Private/Language/locallang.xlf:settings.list.parameters.esr.2</numIndex>
+                                        <numIndex index="1">2</numIndex>
+                                    </numIndex>
+                                </items>
+                            </config>
+                        </TCEforms>
+                    </settings.list.parameters.esr.override>
+
+                    <settings.list.parameters.geoid.override>
+                        <TCEforms>
+                            <label>LLL:EXT:iw_immo/Resources/Private/Language/locallang.xlf:settings.list.parameters.geoid</label>
+                            <config>
+                                <type>select</type>
+                                <renderType>selectSingle</renderType>
+                                <itemsProcFunc>IWAG\IwImmo\Utility\FlexformUtility->getAvailableCountries</itemsProcFunc>
+                            </config>
+                        </TCEforms>
+                    </settings.list.parameters.geoid.override>
+
+                    <settings.list.parameters.etype.override>
+                        <TCEforms>
+                            <label>LLL:EXT:iw_immo/Resources/Private/Language/locallang.xlf:settings.list.parameters.etypes</label>
+                            <config>
+                                <type>input</type>
+                            </config>
+                        </TCEforms>
+                    </settings.list.parameters.etype.override>
+
+                    <settings.list.parameters.ecat.override>
+                        <TCEforms>
+                            <label>LLL:EXT:iw_immo/Resources/Private/Language/locallang.xlf:settings.list.parameters.ecat</label>
+                            <config>
+                                <type>input</type>
+                            </config>
+                        </TCEforms>
+                    </settings.list.parameters.ecat.override>
+
+                    <settings.list.parameters.eqid.override>
+                        <TCEforms>
+                            <label>LLL:EXT:iw_immo/Resources/Private/Language/locallang.xlf:settings.list.parameters.eqid</label>
+                            <config>
+                                <type>input</type>
+                            </config>
+                        </TCEforms>
+                    </settings.list.parameters.eqid.override>
+
+
+                    <settings.list.parameters.roomi.override>
+                        <TCEforms>
+                            <label>LLL:EXT:iw_immo/Resources/Private/Language/locallang.xlf:settings.list.parameters.roomi</label>
+                            <config>
+                                <type>input</type>
+                                <size>3</size>
+                                <eval>int</eval>
+                                <range>
+                                    <lower>0</lower>
+                                    <upper>9999</upper>
+                                </range>
+                            </config>
+                        </TCEforms>
+                    </settings.list.parameters.roomi.override>
+
+                    <settings.list.parameters.rooma.override>
+                        <TCEforms>
+                            <label>LLL:EXT:iw_immo/Resources/Private/Language/locallang.xlf:settings.list.parameters.rooma</label>
+                            <config>
+                                <type>input</type>
+                                <size>3</size>
+                                <eval>int</eval>
+                                <range>
+                                    <lower>0</lower>
+                                    <upper>9999</upper>
+                                </range>
+                            </config>
+                        </TCEforms>
+                    </settings.list.parameters.rooma.override>
+
+                    <settings.list.parameters.primi.override>
+                        <TCEforms>
+                            <label>LLL:EXT:iw_immo/Resources/Private/Language/locallang.xlf:settings.list.parameters.primi</label>
+                            <config>
+                                <type>input</type>
+                                <size>10</size>
+                                <eval>int</eval>
+                            </config>
+                        </TCEforms>
+                    </settings.list.parameters.primi.override>
+
+                    <settings.list.parameters.prima.override>
+                        <TCEforms>
+                            <label>LLL:EXT:iw_immo/Resources/Private/Language/locallang.xlf:settings.list.parameters.prima</label>
+                            <config>
+                                <type>input</type>
+                                <size>10</size>
+                                <eval>int</eval>
+                            </config>
+                        </TCEforms>
+                    </settings.list.parameters.prima.override>
+
+                </el>
+            </ROOT>
+        </parameters>
+
+
+        <advanced>
+            <ROOT>
+                <TCEforms>
+                    <sheetTitle>LLL:EXT:iw_immo/Resources/Private/Language/locallang.xlf:flexform.sheet.advanced</sheetTitle>
+                </TCEforms>
+                <type>array</type>
+                <el>
+                    <settings.list.parameters.sort.override>
+                        <TCEforms>
+                            <label>LLL:EXT:iw_immo/Resources/Private/Language/locallang.xlf:settings.list.parameters.sort</label>
+                            <config>
+                                <type>select</type>
+                                <renderType>selectSingle</renderType>
+                                <itemsProcFunc>IWAG\IwImmo\Utility\FlexformUtility->getListsSorting</itemsProcFunc>
+                                <maxitems>1</maxitems>
+                                <size>1</size>
+                            </config>
+                        </TCEforms>
+                    </settings.list.parameters.sort.override>
+
+                    <settings.list.properties.premium.override>
+                        <TCEforms>
+                            <label>LLL:EXT:iw_immo/Resources/Private/Language/locallang.xlf:settings.list.properties.premium</label>
+                            <config>
+                                <type>input</type>
+                            </config>
+                        </TCEforms>
+                    </settings.list.properties.premium.override>
+
+                    <settings.list.properties.equipmentLimit.override>
+                        <TCEforms>
+                            <label>LLL:EXT:iw_immo/Resources/Private/Language/locallang.xlf:settings.list.properties.equipmentLimit</label>
+                            <config>
+                                <type>input</type>
+                            </config>
+                        </TCEforms>
+                    </settings.list.properties.equipmentLimit.override>
+                </el>
+            </ROOT>
+        </advanced>
+
+        <paginate>
+            <ROOT>
+                <TCEforms>
+                    <sheetTitle>LLL:EXT:iw_immo/Resources/Private/Language/locallang.xlf:flexform.sheet.paginate</sheetTitle>
+                </TCEforms>
+                <type>array</type>
+                <el>
+                    <settings.list.paginate.itemsPerPage>
+                        <TCEforms>
+                            <label>LLL:EXT:iw_immo/Resources/Private/Language/locallang.xlf:settings.list.paginate.itemsPerPage</label>
+                            <config>
+                                <type>input</type>
+                                <size>2</size>
+                                <default>10</default>
+                                <eval>int</eval>
+                                <range>
+                                    <lower>1</lower>
+                                    <upper>20</upper>
+                                </range>
+                                <wizards>
+                                    <slider>
+                                        <type>slider</type>
+                                        <step>1</step>
+                                    </slider>
+                                </wizards>
+                            </config>
+                        </TCEforms>
+                    </settings.list.paginate.itemsPerPage>
+
+                    <settings.list.paginate.maximumNumberOfLinks>
+                        <TCEforms>
+                            <label>LLL:EXT:iw_immo/Resources/Private/Language/locallang.xlf:settings.list.paginate.maximumNumberOfLinks</label>
+                            <config>
+                                <type>input</type>
+                                <size>2</size>
+                                <default>7</default>
+                                <eval>int</eval>
+                                <range>
+                                    <lower>1</lower>
+                                    <upper>20</upper>
+                                </range>
+                                <wizards>
+                                    <slider>
+                                        <type>slider</type>
+                                        <step>1</step>
+                                    </slider>
+                                </wizards>
+                            </config>
+                        </TCEforms>
+                    </settings.list.paginate.maximumNumberOfLinks>
+
+                    <settings.list.paginate.insertAbove>
+                        <TCEforms>
+                            <label>LLL:EXT:iw_immo/Resources/Private/Language/locallang.xlf:settings.list.paginate.insertAbove</label>
+                            <config>
+                                <type>check</type>
+                                <default>1</default>
+                                <items type="array">
+                                    <numIndex index="0" type="array">
+                                        <numIndex index="0">LLL:EXT:iw_immo/Resources/Private/Language/locallang.xlf:settings.list.paginate.insertAbove.0</numIndex>
+                                        <numIndex index="1">0</numIndex>
+                                    </numIndex>
+                                </items>
+                            </config>
+                        </TCEforms>
+                    </settings.list.paginate.insertAbove>
+
+                    <settings.list.paginate.insertBelow>
+                        <TCEforms>
+                            <label>LLL:EXT:iw_immo/Resources/Private/Language/locallang.xlf:settings.list.paginate.insertBelow</label>
+                            <config>
+                                <type>check</type>
+                                <default>1</default>
+                                <items type="array">
+                                    <numIndex index="0" type="array">
+                                        <numIndex index="0">LLL:EXT:iw_immo/Resources/Private/Language/locallang.xlf:settings.list.paginate.insertBelow.0</numIndex>
+                                        <numIndex index="1">0</numIndex>
+                                    </numIndex>
+                                </items>
+                            </config>
+                        </TCEforms>
+                    </settings.list.paginate.insertBelow>
+                </el>
+            </ROOT>
+        </paginate>
+
+        <!--
+        # ##############################################################################################################
+        #                           Template
+        # ##############################################################################################################
+        -->
+
+        <template>EXT:iw_immo/Configuration/FlexForms/Parts/Template.xml</template>
+
+    </sheets>
+</T3DataStructure>

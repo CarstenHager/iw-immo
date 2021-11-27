@@ -1,0 +1,63 @@
+<T3DataStructure>
+    <sheets>
+        <general>
+            <ROOT>
+                <TCEforms>
+                    <sheetTitle>LLL:EXT:iw_immo/Resources/Private/Language/locallang.xlf:flexform.sheet.general
+                    </sheetTitle>
+                </TCEforms>
+                <type>array</type>
+                <el>
+
+                    <settings.calculator.pid.override>
+                        <TCEforms>
+                            <label>LLL:EXT:iw_immo/Resources/Private/Language/locallang.xlf:settings.calculator.pid</label>
+                            <config>
+                                <type>group</type>
+                                <internal_type>db</internal_type>
+                                <allowed>pages</allowed>
+                                <size>1</size>
+                                <maxitems>1</maxitems>
+                                <minitems>1</minitems>
+                                <show_thumbs>1</show_thumbs>
+                            </config>
+                        </TCEforms>
+                    </settings.calculator.pid.override>
+                </el>
+            </ROOT>
+        </general>
+
+        <detail>
+            <ROOT>
+                <TCEforms>
+                    <sheetTitle>LLL:EXT:iw_immo/Resources/Private/Language/locallang.xlf:flexform.sheet.detail
+                    </sheetTitle>
+                </TCEforms>
+                <type>array</type>
+                <el>
+                    <settings.detail.defaultExposeId.override>
+                        <TCEforms>
+                            <label>
+                                LLL:EXT:iw_immo/Resources/Private/Language/locallang.xlf:settings.detail.defaultExposeId
+                            </label>
+                            <config>
+                                <type>input</type>
+                            </config>
+                        </TCEforms>
+                    </settings.detail.defaultExposeId.override>
+
+
+                </el>
+            </ROOT>
+        </detail>
+
+        <!--
+        # ##############################################################################################################
+        #                           Template
+        # ##############################################################################################################
+        -->
+
+        <template>EXT:iw_immo/Configuration/FlexForms/Parts/Template.xml</template>
+
+    </sheets>
+</T3DataStructure>

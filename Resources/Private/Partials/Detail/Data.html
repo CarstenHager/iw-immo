@@ -1,0 +1,116 @@
+{namespace iwImmo=IWAG\IwImmo\ViewHelpers}
+<h3>Objektdaten</h3>
+<hr>
+<div class="grid">
+
+    <f:if condition="{expose.price.price}">
+        <div class="col-2-12"><strong>{f:if(condition:'{expose.category.salesType}==1', then:'Kaufpreis', else:'Kaltmiete')}</strong></div>
+        <div class="col-9-12"><strong>{expose.price.price}</strong></div>
+    </f:if>
+
+    <f:if condition="{expose.price.priceNettoKaltMiete}">
+        <div class="col-2-12"><strong>Kaltmiete</strong></div>
+        <div class="col-9-12"><strong>{expose.price.priceNettoKaltMiete}</strong></div>
+    </f:if>
+
+    <f:if condition="{expose.price.heatingCosts}">
+        <div class="col-2-12">Heizkosten</div>
+        <div class="col-9-12">{expose.price.heatingCosts}</div>
+    </f:if>
+
+    <f:if condition="{expose.price.priceWarmMiete}">
+        <div class="col-2-12"><strong>Warmmiete</strong></div>
+        <div class="col-9-12"><strong>{expose.price.priceWarmMiete}</strong></div>
+    </f:if>
+
+    <f:if condition="{expose.price.additionalCosts}">
+        <div class="col-2-12">Nebenkosten</div>
+        <div class="col-9-12">{expose.price.additionalCosts}</div>
+    </f:if>
+
+    <f:if condition="{expose.price.commonCharge}">
+        <div class="col-2-12">Hausgeld</div>
+        <div class="col-9-12">{expose.price.commonCharge}</div>
+    </f:if>
+
+    <f:if condition="{expose.price.deposit}">
+        <div class="col-2-12">Kaution</div>
+        <div class="col-9-12">{expose.price.deposit}</div>
+    </f:if>
+
+    <f:if condition="{expose.price.parkingPrice}">
+        <div class="col-2-12">Stellplatzpreis</div>
+        <div class="col-9-12">{expose.price.parkingPrice}</div>
+    </f:if>
+
+    <f:if condition="{expose.price.squareMeterPrice}">
+        <div class="col-2-12">Preis / m²</div>
+        <div class="col-9-12">{expose.price.squareMeterPrice}</div>
+    </f:if>
+
+    <div class="col-2-12"><strong>Online-ID</strong></div>
+    <div class="col-9-12"><strong>{expose.onlineId}</strong></div>
+
+
+    <f:if condition="{expose.livingArea}">
+        <div class="col-2-12"><strong>Wohnfläche</strong></div>
+        <div class="col-9-12"><strong>{expose.livingArea}</strong></div>
+    </f:if>
+
+    <f:if condition="{expose.rooms} > 0">
+        <div class="col-2-12"><strong>Zimmer</strong></div>
+        <div class="col-9-12"><strong>{expose.rooms}</strong></div>
+    </f:if>
+
+    <f:if condition="{expose.vacant}">
+        <div class="col-2-12">Bezug</div>
+        <div class="col-9-12">{expose.vacant}</div>
+    </f:if>
+
+    <f:if condition="{expose.commission}">
+        <div class="col-2-12">{f:if(condition:'{expose.category.salesType}==1', then:'Käuferprovision', else:'Mieterprovision')}</div>
+        <div class="col-9-12">{expose.commission}</div>
+    </f:if>
+
+    <f:if condition="{expose.isFurnitured}">
+        <div class="col-2-12">Möbliert</div>
+        <div class="col-9-12">{expose.isFurnitured}</div>
+    </f:if>
+
+    <f:if condition="{expose.landArea}">
+        <div class="col-2-12">Grundstücksfläche</div>
+        <div class="col-9-12">{expose.landArea}</div>
+    </f:if>
+
+    <f:if condition="{expose.parkingSlots}">
+        <div class="col-2-12">Stellplatzanzahl</div>
+        <div class="col-9-12">{expose.parkingSlots}</div>
+    </f:if>
+
+    <f:if condition="{expose.referenceNumber}">
+        <div class="col-2-12">Referenznummer</div>
+        <div class="col-9-12">{expose.referenceNumber}</div>
+    </f:if>
+
+    <f:if condition="{expose.rentFactor}">
+        <div class="col-2-12">Mietfaktor</div>
+        <div class="col-9-12">{expose.rentFactor}</div>
+    </f:if>
+
+    <f:if condition="{expose.rentTimeMin}">
+        <div class="col-2-12">Mindestmietdauer</div>
+        <div class="col-9-12">{expose.rentTimeMin}</div>
+    </f:if>
+
+    <f:if condition="{expose.seatCount} > 0">
+        <div class="col-2-12">Anzahl Sitzplätze</div>
+        <div class="col-9-12">{expose.seatCount}</div>
+    </f:if>
+
+    <f:if condition="{expose.windowFront} > 0">
+        <div class="col-2-12">Fensterfront</div>
+        <div class="col-9-12">{expose.windowFront}</div>
+    </f:if>
+    <div class="clearfix"></div>
+</div>
+<div class="clearfix h_020"></div>

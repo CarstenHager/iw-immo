@@ -1,0 +1,46 @@
+<f:if condition="{expose.images->f:count()}">
+        <div id="iwimmo_slideshow">
+            <div class="previewimage col-7-12">
+                <img src="{expose.images.0.url}"
+                     data-bigpicture="{expose.images.0.xxlUrl}"
+                     data-description="{expose.images.0.description}"
+                     data-position="0"/>
+                <p class="description">{expose.images.0.description}</p>
+                <div class="nav_controls">
+                    <a class="prev"></a>
+                    <div class="slideshow_count">1 von {expose.imagesCount}</div>
+                    <a class="next"></a></div>
+            </div>
+
+            <div class="thumbnailscontainer col-5-12" data-page="0">
+                <div class="thumbnails">
+                <f:for each="{expose.images}" as="image" iteration="i">
+                    <f:if condition="{i.index} > 8">
+                        <f:then>
+                            <img style="display: none;"
+                                 src="{image.thumbnailUrl}"
+                                 data-previewimage="{image.url}"
+                                 data-bigpicture="{image.xxlUrl}"
+                                 data-description="{image.description}"
+                                 data-position="{i.index}"/>
+                        </f:then>
+                        <f:else>
+                            <img src="{image.thumbnailUrl}"
+                                 data-previewimage="{image.url}"
+                                 data-bigpicture="{image.xxlUrl}"
+                                 data-description="{image.description}"
+                                 data-position="{i.index}"/>
+                        </f:else>
+                    </f:if>
+
+                </f:for>
+                </div>
+                <f:if condition="{expose.imagesCount} > 9">
+                    <div class="thumbnail_pagination">
+                    </div>
+                </f:if>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    <div class="clearfix h_020"></div>
+</f:if>
